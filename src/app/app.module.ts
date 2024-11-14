@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from 'primeng/api';
 import { PrimengModule } from './primeng/primeng.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PrimengModule } from './primeng/primeng.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

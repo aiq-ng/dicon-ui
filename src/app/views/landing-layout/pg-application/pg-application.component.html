@@ -31,19 +31,25 @@
       <div class="row">
           <!-- [ Card ] start -->
           <div class="col-sm-12">
-              <div class="card">
-                                      <div class="wizard-sec-bg">
-                  <form id="wizard-advanced-form" class="needs-validation" novalidate action="https://diconline.com.ng/application" method="post" enctype="multipart/form-data" style="display: none;">
-                  <input type="hidden" name="_token" value="JjdTj7but7Au6GvK1kkJMVCcse3gu8bAjYq9GJ4Z">
+              <div class="card px-8">
+                <div class="">
+                  <form id="wizard-advanced-form" class="needs-validation" novalidate action="https://diconline.com.ng/application" method="post" enctype="multipart/form-data" >
+                      <!-- <input type="hidden" name="_token" value="JjdTj7but7Au6GvK1kkJMVCcse3gu8bAjYq9GJ4Z"> -->
 
-                      <h3>Download Form</h3>
+                      <div class="flex gap-2 bg-white shadow-md  h-[64px]">
+                        <h3 (click)="toggleFormStage(1)" [ngClass]="{'bg-blue-500 text-white': currentStage==1 && formStage==1}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Download Form</h3>
+                        <h3 (click)="toggleFormStage(2)" [ngClass]="{'bg-blue-500 text-white': currentStage==2 && formStage==2}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Basic Info</h3>
+                        <h3 (click)="toggleFormStage(3)" [ngClass]="{'bg-blue-500 text-white': currentStage==3 && formStage==3}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Document</h3>
+                      </div>
+
+                      <ng-container *ngIf="formStage==1">
                       <content class="form-step">
                           <!-- Form Start -->
                           <div class="row">
                               <div class="col-md-12">
                                   <fieldset class="row scheduler-border">
                                       <div class="form-group col-md-12">
-                                          <p><a style="color: blue" href="uploads/about-us/APPLICATION_FORM.pdf" target="_blank" style="text-decoration: underline !important; color:blue">Click here to Download PG Programme Form</a> - Fill the form accordingly and upload as part of the required documents</p>
+                                          <p><a style="color: blue" href="/assets/uploads/about-us/APPLICATION_FORM.pdf" target="_blank" style="text-decoration: underline !important; color:blue">Click here to Download PG Programme Form</a> - Fill the form accordingly and upload as part of the required documents</p>
                                       </div>
                                       <div>
                                           <p>PAYMENT INFORMATION</p><br>
@@ -55,9 +61,11 @@
                               </div>
                           </div>
                       </content>
+                      </ng-container>
 
 
-                      <h3>Basic Info</h3>
+                      <ng-container *ngIf="formStage==2">
+                        <h3>Basic Info</h3>
                       <content class="form-step">
                           <!-- Form Start -->
                           <div class="row">
@@ -164,9 +172,11 @@
                           </fieldset>
                           <!-- Form End -->
                       </content>
+                      </ng-container>
 
 
-                                              <h3>Documents</h3>
+                      <ng-container *ngIf="formStage==3">
+                        <h3>Documents</h3>
                       <content class="form-step">
                           <!-- Form Start--->
                           <fieldset class="row scheduler-border">
@@ -194,7 +204,8 @@
                           </fieldset>
                           <!-- Form End--->
                       </content>
-                                          </form>
+                      </ng-container>
+                  </form>
                   </div>
 
               </div>
