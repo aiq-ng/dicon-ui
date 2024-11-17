@@ -11,31 +11,36 @@ export class MobileMenuComponent {
 
   menu = [
     {
-      "name": "dashboard",
+      "name": "Home Page",
       "icon": "assets/icons/layout.png",
-      "route": "/app/dashboard"
+      "route": "/home"
     },
     {
-      "name": "products",
+      "name": "AVM MS Usman CSS",
+      "icon": "assets/icons/layout.png",
+      "route": "/css"
+    },
+    {
+      "name": "FSS-UNN & DIC  PG Programmes",
       "icon": "assets/icons/package.png",
-      "route": "/app/products"
+      "route": "/unndic"
 
     },
     {
-      "name": "purchases",
+      "name": "DIC Gallery",
       "icon": "assets/icons/reciept.png",
-      "route": "/app/purchases"
+      "route": "/gallery"
 
     },
     {
-      "name": "sales",
+      "name": "News Page",
       "icon": "assets/icons/cart.png",
-      "route": "/app/sales"
+      "route": "/news"
     },
     {
-      "name": "inventory plan",
+      "name": "PG Application",
       "icon": "assets/icons/achive.png",
-      "route": "/app/inventory-tracker"
+      "route": "/pg-application"
 
     }
   ]

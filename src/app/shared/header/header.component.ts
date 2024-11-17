@@ -10,32 +10,38 @@ export class HeaderComponent {
 
   dropDown:boolean = false;
   showMobileMenu:boolean = false;
+  is_mobileMenu:boolean = false;
 
     menu = [
       {
-        "name": "dashboard",
+        "name": "Home Page",
         "icon": "assets/icons/layout.png",
-        "route": "/app/dashboard"
+        "route": "/home"
       },
       {
-        "name": "products",
+        "name": "AVM MS Usman CSS",
+        "icon": "assets/icons/layout.png",
+        "route": "/home"
+      },
+      {
+        "name": "FSS-UNN & DIC  PG Programmes",
         "icon": "assets/icons/package.png",
         "route": "/app/products"
 
       },
       {
-        "name": "purchases",
+        "name": "DIC Gallery",
         "icon": "assets/icons/reciept.png",
         "route": "/app/purchases"
 
       },
       {
-        "name": "sales",
+        "name": "News Page",
         "icon": "assets/icons/cart.png",
         "route": "/app/sales"
       },
       {
-        "name": "inventory plan",
+        "name": "PG Application",
         "icon": "assets/icons/achive.png",
         "route": "/app/inventory-tracker"
 
