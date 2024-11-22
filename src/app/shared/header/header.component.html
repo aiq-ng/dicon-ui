@@ -1,6 +1,6 @@
 <div class="heading">
-  <div class="top-header py-3 bg-pricolor text-white flex justify-between items-center px-24">
-    <div class="flex items-center gap-4 text-sm">
+  <div class="top-header py-3 bg-pricolor text-white flex justify-between items-center lg:px-24 px-8">
+    <div class="lg:flex items-center gap-4 text-sm hide ">
       <div class="address flex gap-2 items-center">
         <span class="text-seccolor">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -43,12 +43,20 @@
     </div>
   </div>
 
-  <div class="bottom-header flex justify-between py-2 items-center px-24">
-    <div class="site-logo">
+  <div class="bottom-header flex justify-between py-2 items-center lg:px-24 px-8">
+    <div class="site-logo hidden lg:block md:hidden">
       <img src="/assets/uploads/about-us/DIC200_1723031419.png" class="w-16 h-16 object-cover" alt="">
     </div>
 
-    <div class="menu flex gap-4 font-semibold ">
+    <div class="block md:block lg:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z"/>
+      <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"/>
+      <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z"/>
+    </svg>
+    </div>
+
+    <div class="menu hidden lg:flex gap-4 font-semibold ">
       <nav class="text-gray-800 hover:text-pricolor active:scale-95 cursor-pointer" (click)="route('home')">Home</nav>
       <nav class="text-gray-800 hover:text-pricolor active:scale-95 cursor-pointer" (click)="route('css')">CSS</nav>
       <nav class="text-gray-800 hover:text-pricolor active:scale-95 cursor-pointer" (click)="route('unndic')">Pg-programes</nav>
