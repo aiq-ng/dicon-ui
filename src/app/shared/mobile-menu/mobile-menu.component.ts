@@ -11,29 +11,29 @@ export class MobileMenuComponent {
 
   menu = [
     {
-      "name": "Home Page",
+      "name": "Home",
       "icon": "assets/icons/layout.png",
       "route": "/home"
     },
     {
-      "name": "AVM MS Usman CSS",
+      "name": "CSS",
       "icon": "assets/icons/layout.png",
       "route": "/css"
     },
     {
-      "name": "FSS-UNN & DIC  PG Programmes",
+      "name": "PG Programmes",
       "icon": "assets/icons/package.png",
       "route": "/unndic"
 
     },
     {
-      "name": "DIC Gallery",
+      "name": "Gallery",
       "icon": "assets/icons/reciept.png",
       "route": "/gallery"
 
     },
     {
-      "name": "News Page",
+      "name": "News ",
       "icon": "assets/icons/cart.png",
       "route": "/news"
     },
