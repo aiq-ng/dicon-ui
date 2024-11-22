@@ -1,4 +1,4 @@
-<div class="heading">
+<div class="heading relative">
   <div class="top-header py-3 bg-pricolor text-white flex justify-between items-center lg:px-24 px-8">
     <div class="lg:flex items-center gap-4 text-sm hide ">
       <div class="address flex gap-2 items-center">
@@ -68,5 +68,10 @@
       <a target="_blank" class="px-4 py-2 border border-seccolor active:bg-accent cursor-pointer  text-gray-800" routerLink="/pg-application" >PG APPLICATION</a>
     </div>
   </div>
+
+  <div *ngIf="showMobileMenu" class="absolute top-0 z-[9999]">
+    <app-mobile-menu></app-mobile-menu>
+  </div>
+
 </div>
 
