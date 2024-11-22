@@ -33,13 +33,13 @@
           <div class="col-sm-12">
               <div class="card px-8">
                 <div class="">
-                  <form id="wizard-advanced-form" class="needs-validation" novalidate action="https://diconline.com.ng/application" method="post" enctype="multipart/form-data" >
+                  <form id="" class=""  method="post" enctype="multipart/form-data" >
                       <!-- <input type="hidden" name="_token" value="JjdTj7but7Au6GvK1kkJMVCcse3gu8bAjYq9GJ4Z"> -->
 
                       <div class="flex gap-2 bg-white shadow-md  h-[64px]">
-                        <h3 (click)="toggleFormStage(1)" [ngClass]="{'bg-blue-500 text-white': currentStage==1 && formStage==1}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Download Form</h3>
-                        <h3 (click)="toggleFormStage(2)" [ngClass]="{'bg-blue-500 text-white': currentStage==2 && formStage==2}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Basic Info</h3>
-                        <h3 (click)="toggleFormStage(3)" [ngClass]="{'bg-blue-500 text-white': currentStage==3 && formStage==3}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Document</h3>
+                        <h3 (click)="toggleFormStage(1)" [ngClass]="{'bg-seccolor text-white': currentStage==1 && formStage==1}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Download Form</h3>
+                        <h3 (click)="toggleFormStage(2)" [ngClass]="{'bg-seccolor text-white': currentStage==2 && formStage==2}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Basic Info</h3>
+                        <h3 (click)="toggleFormStage(3)" [ngClass]="{'bg-seccolor text-white': currentStage==3 && formStage==3}" class="py-1 px-4 bg-gray-300 text-gray-400 shadow-md h-[35px] text-base border w-[220px] rounded-md">Document</h3>
                       </div>
 
                       <ng-container *ngIf="formStage==1">
