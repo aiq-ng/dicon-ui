@@ -8,6 +8,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SubMenuComponent } from './sub-menu/sub-menu.component';
 
 
 
@@ -18,6 +19,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MobileMenuComponent,
     FooterComponent,
     SidebarComponent,
+    SubMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HeaderComponent,
     SpinnerComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    SubMenuComponent,
   ]
 })
 export class SharedModule {
