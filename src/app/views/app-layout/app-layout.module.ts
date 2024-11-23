@@ -20,6 +20,9 @@ import { StudentDetailComponent } from './students/student-detail/student-detail
 import { ApplicationDetailComponent } from './applications/application-detail/application-detail.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { CourseContentDetailComponent } from './course-content/course-content-detail/course-content-detail.component';
+import { StudentProfileComponent } from './student-profile/student-profile.component';
+import { GeneralInfoComponent } from './student-profile/general-info/general-info.component';
+import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 
 
 
@@ -39,6 +42,9 @@ import { CourseContentDetailComponent } from './course-content/course-content-de
     ApplicationDetailComponent,
     CourseContentComponent,
     CourseContentDetailComponent,
+    StudentProfileComponent,
+    GeneralInfoComponent,
+    StaffProfileComponent,
 
   ],
   imports: [

@@ -14,6 +14,8 @@ import { BatchDetailComponent } from './batches/batch-detail/batch-detail.compon
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { CourseContentComponent } from './course-content/course-content.component';
 import { CourseContentDetailComponent } from './course-content/course-content-detail/course-content-detail.component';
+import { StudentProfileComponent } from './student-profile/student-profile.component';
+import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 
 
 
@@ -30,8 +32,10 @@ const routes: Routes = [
       {path: 'applications', component: ApplicationsComponent},
       {path: 'applications/:id', component: ApplicationDetailComponent},
       {path: 'staff', component: StaffsComponent},
+      {path: 'staff-profile/:id', component: StaffProfileComponent},
       {path: 'students', component: StudentsComponent},
       {path: 'students/:id', component: StudentDetailComponent},
+      {path: 'student-profile/:id', component: StudentProfileComponent},
       {path: 'reports', component: ReportsComponent},
       {path: 'batches', component: BatchesComponent},
       {path: 'batches/:id', component: BatchDetailComponent},

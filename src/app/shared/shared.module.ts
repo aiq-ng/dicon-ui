@@ -10,6 +10,11 @@ import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SubMenuComponent } from './sub-menu/sub-menu.component';
 import { VideoCardComponent } from './video-card/video-card.component';
+import { ExamsComponent } from './exams/exams.component';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { ClassesComponent } from './classes/classes.component';
+import { FeesComponent } from './fees/fees.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 
@@ -22,6 +27,11 @@ import { VideoCardComponent } from './video-card/video-card.component';
     SidebarComponent,
     SubMenuComponent,
     VideoCardComponent,
+    ExamsComponent,
+    AssignmentComponent,
+    ClassesComponent,
+    FeesComponent,
+    CoursesComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +46,12 @@ import { VideoCardComponent } from './video-card/video-card.component';
     FooterComponent,
     SidebarComponent,
     SubMenuComponent,
-    VideoCardComponent
+    VideoCardComponent,
+    ExamsComponent,
+    AssignmentComponent,
+    ClassesComponent,
+    FeesComponent,
+    CoursesComponent
   ]
 })
 export class SharedModule {
