@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SubMenuComponent } from './sub-menu/sub-menu.component';
+import { VideoCardComponent } from './video-card/video-card.component';
 
 
 
@@ -20,6 +21,7 @@ import { SubMenuComponent } from './sub-menu/sub-menu.component';
     FooterComponent,
     SidebarComponent,
     SubMenuComponent,
+    VideoCardComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { SubMenuComponent } from './sub-menu/sub-menu.component';
     FooterComponent,
     SidebarComponent,
     SubMenuComponent,
+    VideoCardComponent
   ]
 })
 export class SharedModule {

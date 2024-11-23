@@ -18,6 +18,8 @@ import { BatchDetailComponent } from './batches/batch-detail/batch-detail.compon
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { StudentDetailComponent } from './students/student-detail/student-detail.component';
 import { ApplicationDetailComponent } from './applications/application-detail/application-detail.component';
+import { CourseContentComponent } from './course-content/course-content.component';
+import { CourseContentDetailComponent } from './course-content/course-content-detail/course-content-detail.component';
 
 
 
@@ -35,6 +37,8 @@ import { ApplicationDetailComponent } from './applications/application-detail/ap
     CourseDetailComponent,
     StudentDetailComponent,
     ApplicationDetailComponent,
+    CourseContentComponent,
+    CourseContentDetailComponent,
 
   ],
   imports: [

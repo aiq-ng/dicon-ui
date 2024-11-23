@@ -12,6 +12,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SidebarModule } from 'primeng/sidebar';
 import { DialogModule } from 'primeng/dialog';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 
 
@@ -27,7 +28,8 @@ const primeNG: any = [
   ProgressSpinnerModule,
   MultiSelectModule,
   SidebarModule,
-  DialogModule
+  DialogModule,
+  TabMenuModule
 ]
 
 

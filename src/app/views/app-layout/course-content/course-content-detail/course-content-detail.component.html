@@ -1,0 +1,92 @@
+<div class="section ">
+    <!-- <app-menu></app-menu> -->
+  
+    <div class="bg-white w-full mx-auto px-6 lg:px-12 py-8 mt-8  h-full rounded-md">
+  
+      <div class="course flex flex-col lg:flex-row gap-20 ">
+        <div class="section-one basis-[70%]">
+  
+  
+          <div class=" w-full">
+            <video controls class="w-full h-auto rounded-lg shadow-lg">
+              <source src="assets/videos/Yadda zaku shuka dankalin turawa a gida.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+  
+          <div class="vid-title text-lg font-bold mt-4">International Relations and Diplomacy</div>
+  
+  
+          <div class="course-detail mt-8">
+            <div class="heading flex gap-12 text-lg text-primary font-semibold ">
+              <nav class="hover:border-b-2 border-secondary cursor-pointer ">Videos</nav>
+              <nav class="hover:border-b-2 border-secondary cursor-pointer">Text</nav>
+            </div>
+  
+            <div class="detail mt-4">
+                economic, social, and cultural relationships. It explores how states, international organizations, non-governmental actors, 
+                and multinational corporations engage with one another on the global stage. IR examines issues such as war and peace, trade, 
+                diplomacy, human rights, and global governance, aiming to understand how global events and power dynamics shape the world order. 
+                It integrates theories and concepts like realism, liberalism, and constructivism to analyze the behavior of international actors
+                 and the complex nature of global conflicts and cooperation.
+
+            </div>
+          </div>
+  
+        </div>
+        <div class="section-two basis-[30%] ">
+            <div class="overflow-y-auto h-auto max-h-[550px]">
+                <div class="language-filter bg-black flex gap-2 rounded-md p-4 ">
+                    <span class="text-white font-bold text-base">International Relations and Diplomacy</span>
+                    
+                  </div>
+          
+                  <div class="section-title mt-8 font-bold text-xl">Lectures</div>
+          
+                  <div class="course  overflow-y-auto" *ngFor="let row of course">
+                    <div  class="course bg-gray-200 hover:bg-secondary hover:text-seccolor cursor-pointer  flex rounded-md py-4 px-2 mt-2">
+                      <span class="flex gap-1 font-bold items-center">
+                        <span class=" text-secondary">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                          </svg>
+                        </span>
+                          {{row.title}}
+                      </span>
+          
+                    </div>
+          
+
+          
+          
+                  </div>
+          
+            </div>
+          
+  
+  
+  
+        </div>
+      </div>
+  
+      <!-- <div class="video-list mt-8 flex gap-4 flex-wrap w-full justify-between">
+        <div *ngFor="let row of course">
+          <div class="flex-grow flex-basis-0">
+            <app-image-card [displayCount]="false" imageSrc={{row.image}}></app-image-card>
+          </div>
+        </div>
+      </div> -->
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4 justify-start mt-8">
+        <div routerLink="/app/course" class=" flex-grow flex-basis-1 rounded-md border" *ngFor="let row of courses">
+          <app-video-card [displayCount]="true" videoTitle={{row.course_title}} videoSrc={{row.image}}></app-video-card>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="mt-8">
+      <!-- <app-footer></app-footer> -->
+    </div>
+  </div>
+  
