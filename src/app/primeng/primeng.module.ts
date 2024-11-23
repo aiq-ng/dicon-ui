@@ -10,6 +10,8 @@ import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { SidebarModule } from 'primeng/sidebar';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -23,7 +25,9 @@ const primeNG: any = [
   ImageModule,
   CarouselModule,
   ProgressSpinnerModule,
-  MultiSelectModule
+  MultiSelectModule,
+  SidebarModule,
+  DialogModule
 ]
 
 

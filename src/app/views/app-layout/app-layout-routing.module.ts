@@ -7,6 +7,11 @@ import { ApplicationsComponent } from './applications/applications.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { StudentsComponent } from './students/students.component';
 import { ReportsComponent } from './reports/reports.component';
+import { BatchesComponent } from './batches/batches.component';
+import { ApplicationDetailComponent } from './applications/application-detail/application-detail.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
+import { BatchDetailComponent } from './batches/batch-detail/batch-detail.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 
 
 
@@ -17,10 +22,15 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'courses', component: CoursesComponent},
+      {path: 'courses/:id', component: CourseDetailComponent},
       {path: 'applications', component: ApplicationsComponent},
+      {path: 'applications/:id', component: ApplicationDetailComponent},
       {path: 'staff', component: StaffsComponent},
       {path: 'students', component: StudentsComponent},
+      {path: 'students/:id', component: StudentDetailComponent},
       {path: 'reports', component: ReportsComponent},
+      {path: 'batches', component: BatchesComponent},
+      {path: 'batches/:id', component: BatchDetailComponent},
     ]
   }
 ];

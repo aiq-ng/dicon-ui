@@ -13,6 +13,11 @@ import { StaffsComponent } from './staffs/staffs.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { BatchesComponent } from './batches/batches.component';
+import { BatchDetailComponent } from './batches/batch-detail/batch-detail.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
+import { ApplicationDetailComponent } from './applications/application-detail/application-detail.component';
 
 
 
@@ -25,6 +30,11 @@ import { ApplicationsComponent } from './applications/applications.component';
     CoursesComponent,
     ReportsComponent,
     ApplicationsComponent,
+    BatchesComponent,
+    BatchDetailComponent,
+    CourseDetailComponent,
+    StudentDetailComponent,
+    ApplicationDetailComponent,
 
   ],
   imports: [
