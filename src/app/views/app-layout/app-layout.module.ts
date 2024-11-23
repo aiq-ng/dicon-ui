@@ -7,12 +7,24 @@ import { AppLayoutRoutingModule } from './app-layout-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { AppLayoutComponent } from './app-layout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentsComponent } from './students/students.component';
+import { StaffsComponent } from './staffs/staffs.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ReportsComponent } from './reports/reports.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 
 
 @NgModule({
   declarations: [
     AppLayoutComponent,
+    DashboardComponent,
+    StudentsComponent,
+    StaffsComponent,
+    CoursesComponent,
+    ReportsComponent,
+    ApplicationsComponent,
 
   ],
   imports: [

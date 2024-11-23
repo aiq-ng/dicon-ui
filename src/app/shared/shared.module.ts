@@ -7,6 +7,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     SpinnerComponent,
     MobileMenuComponent,
     FooterComponent,
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ]
 })
 export class SharedModule {
