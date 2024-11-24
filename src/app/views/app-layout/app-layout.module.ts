@@ -55,6 +55,7 @@ import { StaffProfileComponent } from './staff-profile/staff-profile.component';
     HttpClientModule,
     PrimengModule,
     FormsModule,
+    
   ]
 })
 export class AppLayoutModule { }

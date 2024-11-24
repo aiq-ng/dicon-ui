@@ -1,6 +1,9 @@
 <div class="section">
-    <app-sub-menu pageTitle="All Students" actionName1="Delete (2)" addButton="Create student"></app-sub-menu>
+    <app-sub-menu pageTitle="All Students" actionName1="Delete (2)" addButton="Create student" (addAction)="showAddStudentForm()"></app-sub-menu>
     <app-student-table></app-student-table>
 </div>
 
 
+<div *ngIf="addStudent">
+    <app-add-student-form></app-add-student-form>
+</div>

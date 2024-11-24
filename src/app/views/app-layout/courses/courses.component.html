@@ -149,10 +149,73 @@
         [style]="{ width: '50rem' }" 
         [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
         [maximizable]="true">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        
+        <!-- Contact Information section -->
+        <form [formGroup]="createCourseForm" (ngSubmit)="createCourse()">
+          <div class="p-4 overflow-y-auto">
+      
+            <div>
+      
+              <div>
+                <!-- Basic information -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 border-b py-2 pb-8">
+      
+                <div>
+                  <label class="block text-gray-600 text-sm font-medium">
+                    Department
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <select [ngClass]="{'border-red-400': isSubmitted && f.warehouse.errors}" formControlName="warehouse" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
+                    <option value="">Select Gender</option>
+                    <ng-container *ngFor="let department of departments">
+                      <option value={{department.id}} >{{department.name}}</option>
+                    </ng-container>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-gray-600 text-sm font-medium">
+                    Batch
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <select [ngClass]="{'border-red-400': isSubmitted && f.warehouse.errors}" formControlName="warehouse" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
+                    <option value="">Select Batch</option>
+                    <ng-container *ngFor="let department of departments">
+                      <option value={{department.id}} >{{department.name}}</option>
+                    </ng-container>
+                  </select>
+                </div>
+      
+                <div>
+                  <label class="block text-gray-600 text-sm font-medium">
+                    Course
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <input formControlName="productName" type="text" [ngClass]="{'border-red-400': isSubmitted && f.productName.errors}" class="block w-full border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="First Name">
+                </div>   
+      
+      
+              </div>
+            </div>
+
+              </div>
+      
+      
+      
+      
+          </div>
+      
+          <div class=" flex w-full justify-between items-center gap-x-2 py-3 px-4 border-t">
+      
+            <div>
+              <span class="text-gray-500 text-sm">Advance settings</span>
+            </div>
+            <button type="submit" >
+              <p-button class="p-2 px-4 bg-primary text-white text-sm" [loading]="loading"  label="Save" ></p-button>
+            </button>
+          </div>
+        </form>
+
     </p-dialog>
 </div>
 
