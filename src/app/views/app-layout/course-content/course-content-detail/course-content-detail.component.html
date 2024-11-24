@@ -77,7 +77,7 @@
         </div>
       </div> -->
   
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4 justify-start mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 justify-start mt-8">
         <div routerLink="/app/course" class=" flex-grow flex-basis-1 rounded-md border" *ngFor="let row of courses">
           <app-video-card [displayCount]="true" videoTitle={{row.course_title}} videoSrc={{row.image}}></app-video-card>
         </div>

@@ -15,6 +15,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { ClassesComponent } from './classes/classes.component';
 import { FeesComponent } from './fees/fees.component';
 import { CoursesCardComponent } from './courses-card/courses-card.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
 
 
 
@@ -32,6 +33,7 @@ import { CoursesCardComponent } from './courses-card/courses-card.component';
     ClassesComponent,
     FeesComponent,
     CoursesCardComponent,
+    AppHeaderComponent,
   ],
   imports: [
     CommonModule,
