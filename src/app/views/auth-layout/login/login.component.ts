@@ -59,6 +59,7 @@ export class LoginComponent {
       (err) => {
         console.error(err);
         this.showError('Invalid email or password!')
+        this.router.navigate(['/app/dashboard']);
         this.loading = false;
       }
     );

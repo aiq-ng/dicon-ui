@@ -10,7 +10,8 @@ module.exports = {
         seccolor: '#01426A',
         accent: '#FFD4D4',
         background: '#FAFAFA',
-        icons: '#FF7350'
+        icons: '#FF7350',
+        accentBlue: '#038FCF'
       }
     },
   },
