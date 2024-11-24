@@ -32,4 +32,12 @@ tailwind-utilities;
     overflow-y: scroll;
     margin: 0px;
     padding: 0px;
+    // overflow: hidden; /* hides the scrollbar */
+
   }
+
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

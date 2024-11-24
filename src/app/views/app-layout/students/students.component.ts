@@ -9,6 +9,7 @@ export class StudentsComponent {
   data: any;
   options: any=null;
   viewDropOut: boolean = false;
+  ActiveStudents:boolean = false;
   addStudent: boolean = false;
   tableHeader = [
     "Order Id",
@@ -75,12 +76,11 @@ export class StudentsComponent {
   }
 
   viewDropOuts(){
-    console.log('Viewing dropouts');
     this.viewDropOut =!this.viewDropOut;
   }
 
-  showAddStudentForm(){
-    this.addStudent = !this.addStudent;
+  viewActiveStudents(){
+    this.ActiveStudents =!this.ActiveStudents;
   }
 
 }

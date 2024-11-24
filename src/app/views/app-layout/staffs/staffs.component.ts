@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './staffs.component.scss'
 })
 export class StaffsComponent {
+  addStaff:boolean = false;
 
+
+
+  toggleAddStaff(){
+    this.addStaff =!this.addStaff;
+  }
 }

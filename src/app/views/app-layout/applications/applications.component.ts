@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './applications.component.scss'
 })
 export class ApplicationsComponent {
+  addApplication:boolean = false;
+
+
+
+  toggleAddBatch(){
+    this.addApplication =!this.addApplication;
+  }
 
 }

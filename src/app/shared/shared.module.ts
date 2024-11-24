@@ -16,6 +16,8 @@ import { ClassesComponent } from './classes/classes.component';
 import { FeesComponent } from './fees/fees.component';
 import { CoursesCardComponent } from './courses-card/courses-card.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
+import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
+import { StudentTableComponent } from './student-table/student-table.component';
 
 
 
@@ -34,6 +36,8 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     FeesComponent,
     CoursesCardComponent,
     AppHeaderComponent,
+    AddStudentFormComponent,
+    StudentTableComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +57,10 @@ import { AppHeaderComponent } from './app-header/app-header.component';
     AssignmentComponent,
     ClassesComponent,
     FeesComponent,
-    CoursesCardComponent
+    CoursesCardComponent,
+    AddStudentFormComponent,
+    StudentTableComponent,
+
   ]
 })
 export class SharedModule {
