@@ -13,7 +13,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SidebarModule } from 'primeng/sidebar';
 import { DialogModule } from 'primeng/dialog';
 import { TabMenuModule } from 'primeng/tabmenu';
-import { PickListModule } from 'primeng/picklist';
+import { OrderListModule } from 'primeng/orderlist';
+import { AccordionModule } from 'primeng/accordion';
 
 
 
@@ -31,7 +32,7 @@ const primeNG: any = [
   SidebarModule,
   DialogModule,
   TabMenuModule,
-  
+  AccordionModule,
 ]
 
 

@@ -83,4 +83,10 @@ export class StudentsComponent {
     this.ActiveStudents =!this.ActiveStudents;
   }
 
+  showAddStudentForm(){
+    console.log('showAddStudentForm')
+    // this method is triggers the add student form even though there is nothing it.
+    this.addStudent = !this.addStudent;
+  }
+
 }

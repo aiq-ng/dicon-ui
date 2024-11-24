@@ -18,6 +18,7 @@ import { CoursesCardComponent } from './courses-card/courses-card.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
 import { StudentTableComponent } from './student-table/student-table.component';
+import { CreateStudentFormComponent } from './create-student-form/create-student-form.component';
 
 
 
@@ -38,6 +39,7 @@ import { StudentTableComponent } from './student-table/student-table.component';
     AppHeaderComponent,
     AddStudentFormComponent,
     StudentTableComponent,
+    CreateStudentFormComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +62,7 @@ import { StudentTableComponent } from './student-table/student-table.component';
     CoursesCardComponent,
     AddStudentFormComponent,
     StudentTableComponent,
+    CreateStudentFormComponent
 
   ]
 })

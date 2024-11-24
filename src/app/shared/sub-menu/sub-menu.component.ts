@@ -17,6 +17,7 @@ export class SubMenuComponent {
 
 
   onAdd(){
+    console.log('Add action triggered');
     this.addAction.emit();
   }
 

@@ -1,15 +1,7 @@
 <div class="section h-screen">
 
+    <app-sub-menu pageTitle="Students" actionName1="Delete (2)" addButton="Add Student" (addAction)="showAddStudentForm()"></app-sub-menu>
     
-
-    <div class="sub-header flex items-center justify-between mt-8">
-        <h3 class="text-gray-800">Student</h3>
-
-        <div class="">
-            <app-add-student-form></app-add-student-form>
-        </div>
-
-    </div>
 
     <div class="student-metrics grid grid-cols-3 gap-4 mt-6">
         <!-- start card -->
@@ -251,6 +243,10 @@
 
 </div>
 
+
+<div *ngIf="addStudent">
+    <app-add-student-form></app-add-student-form>
+</div>
 
 
 <!-- dropouts side nave -->

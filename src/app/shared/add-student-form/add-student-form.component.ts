@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-student-form',
@@ -6,11 +6,17 @@ import { Component } from '@angular/core';
   styleUrl: './add-student-form.component.scss'
 })
 export class AddStudentFormComponent {
-  addStudent: boolean = false;
+  addStudent: boolean = true;
+  @Output() showAddStudentForm = new EventEmitter();
+  @Output() onHide = new EventEmitter();
 
-
-  showAddStudentForm(){
-    this.addStudent = !this.addStudent;
+  onClose(){
+    this.onHide.emit();
   }
+
+
+
+
+  
 
 }
