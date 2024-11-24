@@ -14,7 +14,7 @@ import { ExamsComponent } from './exams/exams.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { ClassesComponent } from './classes/classes.component';
 import { FeesComponent } from './fees/fees.component';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesCardComponent } from './courses-card/courses-card.component';
 
 
 
@@ -31,7 +31,7 @@ import { CoursesComponent } from './courses/courses.component';
     AssignmentComponent,
     ClassesComponent,
     FeesComponent,
-    CoursesComponent,
+    CoursesCardComponent,
   ],
   imports: [
     CommonModule,
@@ -51,7 +51,7 @@ import { CoursesComponent } from './courses/courses.component';
     AssignmentComponent,
     ClassesComponent,
     FeesComponent,
-    CoursesComponent
+    CoursesCardComponent
   ]
 })
 export class SharedModule {
