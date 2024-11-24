@@ -10,6 +10,17 @@ export class StudentsComponent {
   options: any=null;
   viewDropOut: boolean = false;
   addStudent: boolean = false;
+  tableHeader = [
+    "Order Id",
+    "Order",
+    "Quantity",
+    "Customer Name",
+    "Date",
+    "Order Type",
+    "Amount",
+    "Status"
+    
+  ]
 
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
