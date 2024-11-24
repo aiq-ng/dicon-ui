@@ -80,7 +80,7 @@
               <div class=" flex items-center justify-between ">
              
                 <div class="flex gap-2 justify-center items-center cursor-pointer flex-col">
-                    <button class="border border-seccolor text-seccolor p-2 px-4">View List</button>
+                    <button routerLink="/app/students/1" class="border border-seccolor text-seccolor p-2 px-4">View</button>
                     <span class="text-green-500">+ 15.6 %</span>
                     <span class="text-xs text-gray-500">From previous Year</span>
                 </div>
@@ -267,7 +267,7 @@
 </p-sidebar>
 
 <div class="card flex justify-content-center">
-    <p-button (onClick)="showAddStudentForm()" label="Show" />
+    <!-- <p-button (onClick)="showAddStudentForm()" label="Show" /> -->
     <p-dialog 
         header="Add Student" 
         [modal]="true" 
