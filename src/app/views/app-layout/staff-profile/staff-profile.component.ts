@@ -9,7 +9,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class StaffProfileComponent {
   items: MenuItem[] | undefined;
-  currentMenu:any = 'courses';
+  currentMenu:any = 'general';
 
   constructor(private router:Router) {}
 

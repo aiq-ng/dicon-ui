@@ -23,6 +23,7 @@ import { CourseContentDetailComponent } from './course-content/course-content-de
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { GeneralInfoComponent } from './student-profile/general-info/general-info.component';
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
+import { StaffGeneralInfoComponent } from './staff-profile/staff-general-info/staff-general-info.component';
 
 
 
@@ -45,6 +46,7 @@ import { StaffProfileComponent } from './staff-profile/staff-profile.component';
     StudentProfileComponent,
     GeneralInfoComponent,
     StaffProfileComponent,
+    StaffGeneralInfoComponent,
 
   ],
   imports: [
