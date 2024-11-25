@@ -51,7 +51,7 @@
 </div>
 
   <!-- table section -->
-  <div class="graph-section flex w-full h-[70vh]  gap-8  ">
+  <div class="graph-section flex flex-col md:flex-col lg:flex-row w-full h-[70vh]  gap-8  ">
     <div class="top-selling h-full shadow-md bg-white w-full p-4 rounded-md basis-[65%]">
       <div class="heading flex justify-between items-center">
         <div class="title text-lg capitalize text-gray-800">Current Applications</div>
@@ -68,91 +68,93 @@
 
       <!-- table section -->
        <!-- Table -->
-       <table class="w-full divide-y  table-auto divide-gray-200 mt-4">
-        <thead class="">
-          <tr>
-            <th scope="col" class="px-6 py-3 text-start ">
-              <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                Name
-              </span>
-            </th>
-
-            <th scope="col" class="px-6 py-3 text-start">
-              <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                Program
-              </span>
-            </th>
-
-            <th scope="col" class="px-6 py-3 text-start ">
-              <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                Email
-              </span>
-            </th>
-
-            <th scope="col" class="px-6 py-3 text-start ">
-              <p class="text-xs font-semibold uppercase tracking-wide text-gray-800">
-                Phone
-              </p>
-            </th>
-          </tr>
-        </thead>
-
-        <tbody class="divide-y divide-gray-200">
-          <tr>
-            <td class="size-px  px-6 py-3">
-                <p class="text-sm text-gray-500">Ahmed Bello</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <div class="flex items-center gap-x-3">
-                <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
-              </div>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">09087565544</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="size-px  px-6 py-3">
-                <p class="text-sm text-gray-500">Ahmed Bello</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <div class="flex items-center gap-x-3">
-                <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
-              </div>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">09087565544</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="size-px  px-6 py-3">
-                <p class="text-sm text-gray-500">Ahmed Bello</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <div class="flex items-center gap-x-3">
-                <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
-              </div>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
-            </td>
-            <td class="size-px  px-6 py-3">
-              <p class="text-sm text-gray-500">09087565544</p>
-            </td>
-          </tr>
-
-
-
-        </tbody>
-      </table>
+       <div class="w-full overflow-x-auto">
+        <table class="w-full divide-y  table-auto divide-gray-200 mt-4">
+          <thead class="">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-start ">
+                <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                  Name
+                </span>
+              </th>
+  
+              <th scope="col" class="px-6 py-3 text-start">
+                <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                  Program
+                </span>
+              </th>
+  
+              <th scope="col" class="px-6 py-3 text-start ">
+                <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                  Email
+                </span>
+              </th>
+  
+              <th scope="col" class="px-6 py-3 text-start ">
+                <p class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                  Phone
+                </p>
+              </th>
+            </tr>
+          </thead>
+  
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="size-px  px-6 py-3">
+                  <p class="text-sm text-gray-500">Ahmed Bello</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <div class="flex items-center gap-x-3">
+                  <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
+                </div>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">09087565544</p>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="size-px  px-6 py-3">
+                  <p class="text-sm text-gray-500">Ahmed Bello</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <div class="flex items-center gap-x-3">
+                  <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
+                </div>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">09087565544</p>
+              </td>
+            </tr>
+  
+            <tr>
+              <td class="size-px  px-6 py-3">
+                  <p class="text-sm text-gray-500">Ahmed Bello</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <div class="flex items-center gap-x-3">
+                  <p class="font-semibold text-sm text-gray-500">Remote Sensing</p>
+                </div>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">ahmed&#64;gmail.com</p>
+              </td>
+              <td class="size-px  px-6 py-3">
+                <p class="text-sm text-gray-500">09087565544</p>
+              </td>
+            </tr>
+  
+  
+  
+          </tbody>
+        </table>
+       </div>
       <!-- End Table -->
 
     </div>

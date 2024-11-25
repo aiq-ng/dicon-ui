@@ -4,7 +4,7 @@
     <div class="w-full flex flex-col basis-[65%] h-[70vh] bg-white">
     <div class="-m-1.5 overflow-x-auto">
     <div class="p-1.5 min-w-full inline-block align-middle">
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden  ">
+        <div class="table-section border border-gray-200 rounded-xl shadow-sm overflow-x-auto">
 
             <!-- Header -->
           <div *ngIf="showHeader" class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 ">
@@ -32,106 +32,98 @@
 
 
         <!-- Table -->
-        <table class="min-w-full divide-y divide-gray-200 ">
-            <thead class="bg-gray-50 ">
-            <tr>
-                <ng-container *ngFor="let header of tableHeader">
-                    <th *ngIf="header == 'Name'" scope="col" class="ps-6 py-3 text-start">
-                        <label for="hs-at-with-checkboxes-main" class="flex">
-                            <input type="checkbox" class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none     " id="hs-at-with-checkboxes-main">
-                            <span class="sr-only">Checkbox</span>
-                        </label>
-                        </th>
-
-                        <th scope="col" class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start whitespace-nowrap">
-                            <div class="flex items-center gap-x-2">
-                                <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 ">
-                                {{header}}
-                                </span>
-                            </div>
-                        </th>
-                </ng-container>
-
-                <th scope="col" class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                        <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 ">
-                            
-                        </span>
-                    </div>
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="ps-6 py-3 text-start">
+                  <label for="hs-at-with-checkboxes-main" class="flex items-center">
+                    <input
+                      type="checkbox"
+                      id="hs-at-with-checkboxes-main"
+                      class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                    />
+                    <span class="sr-only">Select all</span>
+                  </label>
                 </th>
-
+                <ng-container *ngFor="let header of tableHeader">
+                  <th
                     
-            </tr>
-            </thead>
-
-            <tbody class="divide-y divide-gray-200 ">
-                <!-- Row -->
-                <ng-container *ngFor="let student of students">
-                    <tr routerLink="/app/student-profile/1">
-                        <td class="size-px ">
-                        <div class="ps-6 py-3">
-                            <label for="hs-at-with-checkboxes-1" class="flex">
-                            <input type="checkbox" class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none     " id="hs-at-with-checkboxes-1">
-                            <span class="sr-only">Checkbox</span>
-                            </label>
-                        </div>
-                        </td>
-                        <td class="size-px ">
-                        <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
-                            <div class="flex items-center gap-x-3">
-                            <img class="inline-block size-[38px] rounded-full" src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar">
-                            <div class="grow w-36">
-                                <span class="block text-sm font-semibold text-gray-800 ">{{student.first_name}} {{student.last_name}}</span>
-                                <span class="block text-sm text-gray-500 ">{{student.email}}</span>
-                            </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td class="h-px ">
-                        <div class=" py-3">
-                            <span class="block text-sm font-semibold text-gray-800 ">{{student.department}}</span>
-                         
-                        </div>
-                        </td>
-                        <td class="size-px ">
-                        <div class=" py-3">
-                            <span class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full  ">
-                            <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            Active
-                            </span>
-                        </div>
-                        </td>
-                        <td class="size-px ">
-                        <div class=" py-3">
-                            <div class="flex items-center gap-x-3">
-                            <span class="text-xs text-gray-500 ">{{student.phone_number}}</span>
-                  
-                            </div>
-                        </div>
-                        </td>
-                        <td class="size-px ">
-                        <div class=" py-3">
-                            <span class="text-sm text-gray-500 ">28 Dec, 12:12</span>
-                        </div>
-                        </td>
-                        <td class="size-px ">
-                        <div class=" py-1.5">
-                            <a class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium " href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
-                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-                                  </svg>
-                            </a>
-                        </div>
-                        </td>
-                    </tr>
+                    scope="col"
+                    class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start whitespace-nowrap"
+                  >
+                    <div class="flex items-center gap-x-2">
+                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800">
+                        {{ header }}
+                      </span>
+                    </div>
+                  </th>
                 </ng-container>
-
+                <th scope="col" class="ps-6 py-3 text-start"></th>
+              </tr>
+            </thead>
+  
+            <tbody class="divide-y divide-gray-200">
+              <ng-container *ngFor="let student of students">
+                <tr>
+                  <td class="ps-6 py-3">
+                    <label for="hs-at-with-checkboxes" class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="hs-at-with-checkboxes-"
+                        class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                      />
+                      <span class="sr-only">Select {{ student.first_name }}</span>
+                    </label>
+                  </td>
+                  <td class="ps-6 py-3">
+                    <div class="flex items-center gap-x-3">
+                      <img
+                        class="inline-block w-10 h-10 rounded-full"
+                        src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Avatar"
+                      />
+                      <div class="grow">
+                        <span class="block text-sm font-semibold text-gray-800">
+                          {{ student.first_name }} {{ student.last_name }}
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3">
+                    <span class="block text-sm font-semibold text-gray-800">{{ student.department }}</span>
+                  </td>
+                  <td class="py-3">
+                    <span class="text-xs text-gray-500">{{ student.phone_number }}</span>
+                  </td>
+                  <td class="py-3">
+                    <span class="text-sm text-gray-500">28 Dec, 12:12</span>
+                  </td>
+                  <td class="py-3">
+                    <a
+                      href="#"
+                      class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-eye"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"
+                        />
+                        <path
+                          d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+                        />
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+              </ng-container>
             </tbody>
-        </table>
-        <!-- End Table -->
+          </table>
 
         <!-- Footer -->
         <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 ">
