@@ -38,7 +38,7 @@
 
 
 <div *ngIf="currentMenu=='courses'">
-    <div class="mt-6  w-full grid grid-cols-3  gap-4">
+    <div class="mt-8  w-full grid grid-cols-3  gap-4">
         <!-- start card -->
         <div (click)="route('app/course-content-detail/1')" class=" w-full flex flex-col bg-white border  shadow-sm rounded-xl  ">
             <div class="p-4 md:p-5">
@@ -73,6 +73,16 @@
 
     </div>
 
+</div>
+
+<div *ngIf="currentMenu=='student-enroled'" class="">
+  <app-student-table></app-student-table>
+</div>
+
+<div *ngIf="currentMenu=='exams'">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+    <app-exams></app-exams>
+  </div>
 </div>
 
 </div>
