@@ -6,7 +6,7 @@
 
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-start mt-8">
-        <div routerLink="/app/course-content-detail/1" class=" rounded-md border" *ngFor="let row of courses">
+        <div routerLink="/app/courses/1" class=" rounded-md border" *ngFor="let row of courses">
           <app-video-card [displayCount]="true" videoTitle={{row.course_title}} videoSrc={{row.image}}></app-video-card>
         </div>
       </div>
