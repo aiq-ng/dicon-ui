@@ -8,6 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class StudentTableComponent {
   @Input() showHeader: boolean = false;
   @Input() tableTitle!: string;
+  @Input() students: any[] = [];
+  @Input() tableHeader: any[] = [];
   @Output() selectedStudent: EventEmitter<any> = new EventEmitter();
 
 }

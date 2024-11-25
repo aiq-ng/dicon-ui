@@ -252,11 +252,12 @@
 <!-- dropouts side nave -->
 
 <p-sidebar [(visible)]="viewDropOut" position="right" [style]="{'width':'50%'}">
-    <app-student-table tableTitle="Dropouts" [showHeader]="true"></app-student-table>
+    <app-student-table tableTitle="Dropouts" [showHeader]="true" [students]="activeStudents" [tableHeader]="tableHeader"></app-student-table>
 
 </p-sidebar>
 
 <p-sidebar [(visible)]="ActiveStudents" position="left" [style]="{'width':'50%'}">
-    <app-student-table tableTitle="Active Users" [showHeader]="true"></app-student-table>
+    <app-student-table tableTitle="Dropouts" [showHeader]="true" [students]="dropouts" [tableHeader]="tableHeader"></app-student-table>
+
 </p-sidebar>
 
