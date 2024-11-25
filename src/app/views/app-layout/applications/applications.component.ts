@@ -10,6 +10,7 @@ export class ApplicationsComponent {
   addApplication:boolean = false;
   createApplicationForm:any;
   isSubmitted: boolean = false;
+  confirmDelete: boolean = false;
   loading: boolean = false;
   viewImages:boolean=false;
   genders: any = ['Male', 'Female'];
@@ -116,6 +117,10 @@ export class ApplicationsComponent {
 
   toggleAddBatch(){
     this.addApplication =!this.addApplication;
+  }
+
+  toggleConfirmDelete(){
+    this.confirmDelete = !this.confirmDelete;
   }
 
   

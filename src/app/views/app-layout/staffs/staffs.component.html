@@ -1,6 +1,6 @@
 <div class="section">
     <!-- Table Section -->
-     <app-sub-menu pageTitle="All Staff" actionName1="Delete (2)" addButton="Create Staff" (addAction)="toggleAddStaff()"></app-sub-menu>
+     <app-sub-menu pageTitle="All Staff" actionName1="Delete (2)" addButton="Create Staff" (action1)="toggleConfirmDelete()" (addAction)="toggleAddStaff()"></app-sub-menu>
 <div class="w-full px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
      <!-- tables section -->
      <div class="w-full flex flex-col basis-[65%] h-[70vh] bg-white">
@@ -370,3 +370,9 @@
           </form>
     </p-dialog>
   </div>
+  
+
+<!-- confirm Delete -->
+<div *ngIf="confirmDelete">
+  <app-confirm-delete itemToDelete="Staff" ></app-confirm-delete>
+</div>

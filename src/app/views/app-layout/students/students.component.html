@@ -1,6 +1,6 @@
 <div class="section h-screen">
 
-    <app-sub-menu pageTitle="Students" actionName1="Delete (2)" addButton="Add Student" (addAction)="showAddStudentForm()"></app-sub-menu>
+    <app-sub-menu pageTitle="Students" actionName1="Delete (2)" addButton="Add Student" (action1)="toggleConfirmDelete()" (addAction)="showAddStudentForm()"></app-sub-menu>
     
 
     <div class="student-metrics grid grid-cols-3 gap-4 mt-6">
@@ -97,8 +97,6 @@
     
         <div class="event-section p-4  bg-white ">
             <app-student-table tableTitle="Recent Students" [showHeader]="true" [students]="activeStudents" [tableHeader]="tableHeader"></app-student-table>
-
-    
         </div>
     
     
@@ -111,16 +109,19 @@
     <app-add-student-form></app-add-student-form>
 </div>
 
+<!-- Confirm delete -->
+<div *ngIf="confirmDelete">
+<app-confirm-delete itemToDelete="Student(s)" ></app-confirm-delete>
+</div>
+
 
 <!-- dropouts side nave -->
 
-<p-sidebar [(visible)]="viewDropOut" position="right" [style]="{'width':'50%'}">
+<p-sidebar [(visible)]="viewDropOut" position="right" styleClass="hidden-scrollbar" [style]="{'width':'80%'}">
     <app-student-table tableTitle="Dropouts" [showHeader]="true" [students]="activeStudents" [tableHeader]="tableHeader"></app-student-table>
-
 </p-sidebar>
 
-<p-sidebar [(visible)]="ActiveStudents" position="left" [style]="{'width':'50%'}">
+<p-sidebar [(visible)]="ActiveStudents" position="left" [style]="{'width':'80%'}">
     <app-student-table tableTitle="Dropouts" [showHeader]="true" [students]="dropouts" [tableHeader]="tableHeader"></app-student-table>
-
 </p-sidebar>
 

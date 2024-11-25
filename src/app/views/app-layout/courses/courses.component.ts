@@ -12,6 +12,7 @@ export class CoursesComponent {
   departments:any;
   isSubmitted:boolean = false;
   loading:boolean = false;
+  confirmDelete:boolean = false;
   createCourseForm:any;
 
   constructor(private router: Router, private fb: FormBuilder){}
@@ -39,6 +40,10 @@ export class CoursesComponent {
 
   toggleAddCourse(){
     this.addCourse =!this.addCourse;
+  }
+
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
   }
 
 

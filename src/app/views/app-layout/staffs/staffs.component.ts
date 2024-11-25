@@ -13,6 +13,7 @@ export class StaffsComponent {
   addStaff:boolean = false;
   createProductForm:any;
   isSubmitted: boolean = false;
+  confirmDelete:boolean = false;
   files:any;
   loading:boolean = false;
   imageSrc:any;
@@ -194,7 +195,9 @@ export class StaffsComponent {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 
-
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
+  }
 
   toggleAddStaff(){
     this.addStaff =!this.addStaff;

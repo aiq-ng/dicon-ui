@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CourseContentComponent {
   courses:any = []
+  confirmDelete:boolean = false;
 
   ngOnInit(){
     this.courses = [
@@ -20,6 +21,10 @@ export class CourseContentComponent {
   }
 
 
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
+  }
+  
   toggleAddVideo(){
 
   }

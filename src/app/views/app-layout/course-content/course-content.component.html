@@ -1,4 +1,4 @@
-  <app-sub-menu pageTitle="Courses" actionName1="Delete (2)" addButton="Upload video" (addAction)="toggleAddVideo()"></app-sub-menu>
+  <app-sub-menu pageTitle="Courses" actionName1="Delete (2)" addButton="Upload video" (action1)="toggleConfirmDelete()" (addAction)="toggleAddVideo()"></app-sub-menu>
 
 
 <div class="videos">
@@ -11,3 +11,9 @@
         </div>
       </div>
 </div>
+#
+
+  <!-- confirm delete  -->
+  <div *ngIf="confirmDelete">
+    <app-confirm-delete itemToDelete="Video(s)"></app-confirm-delete>
+   </div>

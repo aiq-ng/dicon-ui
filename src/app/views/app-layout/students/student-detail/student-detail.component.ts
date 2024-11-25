@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class StudentDetailComponent {
   addStudent:boolean = false;
+  confirmDelete:boolean = false;
   students = [
     {
       "department": "Global Security and Terrorism",
@@ -78,6 +79,10 @@ export class StudentDetailComponent {
 
   tableHeader = ['Name', 'Department', 'Status', 'phone_number', 'Enrolement date']
   
+
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
+  }
 
   showAddStudentForm(){
     console.log('showAddStudentForm')

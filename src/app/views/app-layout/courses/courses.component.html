@@ -1,6 +1,6 @@
 <div class="section h-screen w-full">
     
-  <app-sub-menu pageTitle="All Courses" actionName1="Delete (2)" addButton="Add Course" (addAction)="toggleAddCourse()"></app-sub-menu>
+  <app-sub-menu pageTitle="All Courses" actionName1="Delete (2)" addButton="Add Course" (action1)="toggleConfirmDelete()" (addAction)="toggleAddCourse()"></app-sub-menu>
 
 
     <div class="mt-6 w-full grid grid-cols-3 gap-4">
@@ -217,5 +217,10 @@
         </form>
 
     </p-dialog>
+</div>
+
+<!-- confirm Delete -->
+<div *ngIf="confirmDelete">
+  <app-confirm-delete itemToDelete="Course" ></app-confirm-delete>
 </div>
 

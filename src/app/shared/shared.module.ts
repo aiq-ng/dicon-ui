@@ -19,6 +19,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { AddStudentFormComponent } from './add-student-form/add-student-form.component';
 import { StudentTableComponent } from './student-table/student-table.component';
 import { CreateStudentFormComponent } from './create-student-form/create-student-form.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 
 
@@ -40,6 +41,7 @@ import { CreateStudentFormComponent } from './create-student-form/create-student
     AddStudentFormComponent,
     StudentTableComponent,
     CreateStudentFormComponent,
+    ConfirmDeleteComponent,
   ],
   imports: [
     CommonModule,
@@ -62,7 +64,8 @@ import { CreateStudentFormComponent } from './create-student-form/create-student
     CoursesCardComponent,
     AddStudentFormComponent,
     StudentTableComponent,
-    CreateStudentFormComponent
+    CreateStudentFormComponent,
+    ConfirmDeleteComponent
 
   ]
 })

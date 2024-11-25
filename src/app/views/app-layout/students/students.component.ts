@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class StudentsComponent {
   data: any;
   options: any=null;
+  confirmDelete: boolean = false;
   viewDropOut: boolean = false;
   ActiveStudents:boolean = false;
   addStudent: boolean = false;
@@ -99,7 +100,7 @@ export class StudentsComponent {
   
   
 
-  tableHeader = ['Name', 'Department', 'Status', 'phone_number', 'Enrolement date']
+  tableHeader = ['Name', 'Department', 'phone_number', 'Enrolement date']
 
   ngOnInit() {
     const documentStyle = getComputedStyle(document.documentElement);
@@ -155,6 +156,10 @@ export class StudentsComponent {
 
   viewDropOuts(){
     this.viewDropOut =!this.viewDropOut;
+  }
+
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
   }
 
   viewActiveStudents(){

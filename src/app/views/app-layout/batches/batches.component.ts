@@ -14,6 +14,7 @@ export class BatchesComponent {
   isSubmitted:boolean = false;
   loading:boolean = false;
   createBatchForm:any;
+  confirmDelete:boolean = false;
 
   constructor(private router: Router, private fb: FormBuilder){}
 
@@ -43,6 +44,10 @@ export class BatchesComponent {
 
   toggleAddBatch(){
     this.addBatch =!this.addBatch;
+  }
+
+  toggleConfirmDelete(){
+    this.confirmDelete =!this.confirmDelete;
   }
 
   createBatch(){}
