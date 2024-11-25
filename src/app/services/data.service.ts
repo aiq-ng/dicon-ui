@@ -19,4 +19,29 @@ export class DataService {
       news: 'id,title,content,date'
     })
    }
+
+   getUsers(){
+    return [
+      {
+          "id": 1,
+          "email": "student@gmail.com",
+          "password": "password",
+          "account_type": "student"
+      },
+      {
+          "id": 2,
+          "email": "staff@gmail.com",
+          "password": "password",
+          "account_type": "staff"
+
+      },
+      {
+          "id": 3,
+          "email": "admin@gmail.com",
+          "password": "password",
+          "account_type": "admin"
+
+      }
+  ]
+   }
 }

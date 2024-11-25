@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,6 +10,8 @@ export class CourseContentDetailComponent {
   courses:any;
   open = false
   currentId=0
+
+  constructor(private location: Location){}
 
   course = [
     {"id":1,"title": "Global Security and Terrorism", "image": 'assets/thumbnail6.jpg'},
@@ -33,6 +36,10 @@ export class CourseContentDetailComponent {
   openChapter(id:number){
     this.open = !this.open;
     this.currentId = id;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 

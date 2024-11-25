@@ -17,6 +17,7 @@ export class StorageService {
 
   saveJson(name:string, data: object){
     localStorage.setItem(name, JSON.stringify(data))
+    console.log(name + " saved")
   }
 
   getJson(name:string){
