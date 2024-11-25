@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  dropdown:boolean = false;
+
+
+  toggleDropdown(){
+    this.dropdown =!this.dropdown;
+  }
 
 }
