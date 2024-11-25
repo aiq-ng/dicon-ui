@@ -108,12 +108,12 @@ export class StudentsComponent {
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
     this.data = {
-        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        labels: ['2016/2017', '2017/2018', '2018/2019', '2019/2020', '2020/2021', '2021/2022', '2022/2023', '2023/2024' ],
         datasets: [
 
             {
                 label: 'Cash Flow',
-                data: [800000, 450000, 900000, 1000000, 635000, 245000, 450000, 1200000, 780000, 540000, 1000000],
+                data: [40, 60, 70, 60, 78, 80, 64, 80],
                 fill: true,
                 borderColor: documentStyle.getPropertyValue('--blue-500'),
                 tension: 0.4,
