@@ -1,6 +1,6 @@
 <div class="section h-screen w-full">
     
-  <app-sub-menu pageTitle="All Courses" actionName1="Delete (2)" addButton="Add Course" (action1)="toggleConfirmDelete()" (addAction)="toggleAddCourse()"></app-sub-menu>
+  <app-sub-menu pageTitle="All Departments" actionName1="Delete (2)" addButton="Add Department" (action1)="toggleConfirmDelete()" (addAction)="toggleAddCourse()"></app-sub-menu>
 
 
     <div class="mt-6 w-full grid grid-cols-3 gap-4">
@@ -160,7 +160,7 @@
                 <!-- Basic information -->
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 border-b py-2 pb-8">
       
-                <div>
+                <!-- <div>
                   <label class="block text-gray-600 text-sm font-medium">
                     Department
                     <span class="text-red-500">*</span>
@@ -171,9 +171,9 @@
                       <option value={{department.id}} >{{department.name}}</option>
                     </ng-container>
                   </select>
-                </div>
+                </div> -->
 
-                <div>
+                <!-- <div>
                   <label class="block text-gray-600 text-sm font-medium">
                     Batch
                     <span class="text-red-500">*</span>
@@ -184,11 +184,11 @@
                       <option value={{department.id}} >{{department.name}}</option>
                     </ng-container>
                   </select>
-                </div>
+                </div> -->
       
                 <div>
                   <label class="block text-gray-600 text-sm font-medium">
-                    Course
+                    Department
                     <span class="text-red-500">*</span>
                   </label>
                   <input formControlName="productName" type="text" [ngClass]="{'border-red-400': isSubmitted && f.productName.errors}" class="block w-full border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="First Name">
