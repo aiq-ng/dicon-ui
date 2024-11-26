@@ -51,7 +51,9 @@ export class CoursesComponent {
     return this.createCourseForm.controls;
   }
 
-  createCourse(){}
+  createCourse(){
+    this.toggleAddCourse();
+  }
 
 
   route(page:string){

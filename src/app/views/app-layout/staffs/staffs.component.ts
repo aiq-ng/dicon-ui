@@ -135,38 +135,41 @@ export class StaffsComponent {
 
     let formData:any = new FormData();
 
+    this.showSuccess('staff added successfully')
+    this.toggleAddStaff();
+
     // Append each file in the files array to FormData
-    this.files.forEach((file: any) => {
-      formData.append(`media[]`, file, file.name);  // Append each file with the key media[]
-    });
+    // this.files.forEach((file: any) => {
+    //   formData.append(`media[]`, file, file.name);  // Append each file with the key media[]
+    // });
 
     // Append other form data
-    formData.append('name', this.createProductForm.get('productName')?.value);
-    formData.append('location', this.createProductForm.get('warehouse')?.value);
-    formData.append('vendor', this.createProductForm.get('vendor')?.value);
-    formData.append('code', this.createProductForm.get('code')?.value);
-    formData.append('sku', this.createProductForm.get('sku')?.value);
-    formData.append('barcode', this.createProductForm.get('barcode')?.value);
-    formData.append('price', this.createProductForm.get('price')?.value);
-    formData.append('unit', this.createProductForm.get('unit')?.value);
-    formData.append('quantity', this.createProductForm.get('quantity')?.value);
+    // formData.append('name', this.createProductForm.get('productName')?.value);
+    // formData.append('location', this.createProductForm.get('warehouse')?.value);
+    // formData.append('vendor', this.createProductForm.get('vendor')?.value);
+    // formData.append('code', this.createProductForm.get('code')?.value);
+    // formData.append('sku', this.createProductForm.get('sku')?.value);
+    // formData.append('barcode', this.createProductForm.get('barcode')?.value);
+    // formData.append('price', this.createProductForm.get('price')?.value);
+    // formData.append('unit', this.createProductForm.get('unit')?.value);
+    // formData.append('quantity', this.createProductForm.get('quantity')?.value);
 
-    if (this.createProductForm.invalid) {
-      console.log("form invalid");
-      return;
-    }
+    // if (this.createProductForm.invalid) {
+    //   console.log("form invalid");
+    //   return;
+    // }
 
-    this.api.post('products', formData).subscribe(
-      res => {
-        console.log(res);
-        this.showSuccess('Product created successfully');
-        this.createProductForm.reset();
-      },
-      err => {
-        console.log(err);
-        this.showError('Failed to create product, please try again');
-      }
-    );
+    // this.api.post('products', formData).subscribe(
+    //   res => {
+    //     console.log(res);
+    //     this.showSuccess('Product created successfully');
+    //     this.createProductForm.reset();
+    //   },
+    //   err => {
+    //     console.log(err);
+    //     this.showError('Failed to create product, please try again');
+    //   }
+    // );
   }
 
 

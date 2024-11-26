@@ -141,7 +141,7 @@
 
 
 <div class="card flex justify-content-center">
-    <p-button (onClick)="toggleAddCourse()" label="Show" />
+    <!-- <p-button (onClick)="toggleAddCourse()" label="Show" /> -->
     <p-dialog 
         header="Add Courses" 
         [modal]="true" 
@@ -208,9 +208,9 @@
           <div class=" flex w-full justify-between items-center gap-x-2 py-3 px-4 border-t">
       
             <div>
-              <span class="text-gray-500 text-sm">Advance settings</span>
+              <span class="text-gray-500 text-sm"></span>
             </div>
-            <button type="submit" >
+            <button (click)="createCourse()" type="submit" >
               <p-button class="p-2 px-4 bg-primary text-white text-sm" [loading]="loading"  label="Save" ></p-button>
             </button>
           </div>

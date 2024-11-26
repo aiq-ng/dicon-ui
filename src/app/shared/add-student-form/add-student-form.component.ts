@@ -9,9 +9,14 @@ export class AddStudentFormComponent {
   addStudent: boolean = true;
   @Output() showAddStudentForm = new EventEmitter();
   @Output() onHide = new EventEmitter();
+  @Output() onSave = new EventEmitter();
 
   onClose(){
     this.onHide.emit();
+  }
+
+  onClick(){
+    this.onSave.emit();
   }
 
 

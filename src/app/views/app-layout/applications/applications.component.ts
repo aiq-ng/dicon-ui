@@ -114,7 +114,9 @@ export class ApplicationsComponent {
     return this.createApplicationForm.controls;
   }
 
-  save(){}
+  save(){
+    this.toggleAddBatch()
+  }
 
   toggleAddBatch(){
     this.addApplication =!this.addApplication;
