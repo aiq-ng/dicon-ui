@@ -47,13 +47,13 @@
 <div class="mt-6">
 
   <div *ngIf="currentMenu=='courses'">
-    <app-courses-card></app-courses-card>
+    <app-courses-card ></app-courses-card>
 
 </div>
 
 <div *ngIf="currentMenu=='general'">
   
-    <app-general-info></app-general-info>
+    <app-general-info (viewExams)="toggleTab('exams')"></app-general-info>
 </div>
 
 <div *ngIf="currentMenu=='exams'">

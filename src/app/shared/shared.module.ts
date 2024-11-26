@@ -22,6 +22,7 @@ import { CreateStudentFormComponent } from './create-student-form/create-student
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 import { ExamsDetailComponent } from './exams-detail/exams-detail.component';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
+import { ApplicantsProfileComponent } from './applicants-profile/applicants-profile.component';
 
 
 
@@ -46,6 +47,7 @@ import { AssignmentDetailComponent } from './assignment-detail/assignment-detail
     ConfirmDeleteComponent,
     ExamsDetailComponent,
     AssignmentDetailComponent,
+    ApplicantsProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -72,6 +74,7 @@ import { AssignmentDetailComponent } from './assignment-detail/assignment-detail
     ConfirmDeleteComponent,
     ExamsDetailComponent,
     AssignmentDetailComponent,
+    ApplicantsProfileComponent,
 
   ]
 })

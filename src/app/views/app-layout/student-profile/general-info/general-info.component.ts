@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-general-info',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './general-info.component.scss'
 })
 export class GeneralInfoComponent {
+  @Output() viewExams = new EventEmitter();
+  @Input() name!:string;
+
+
+
+  onClick(){
+    this.viewExams.emit('click');
+    // console.log('child hit')
+  }
 
 }

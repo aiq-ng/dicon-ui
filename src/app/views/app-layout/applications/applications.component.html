@@ -14,7 +14,7 @@
          <!-- Table -->
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
-            <tr>
+            <tr >
               <th scope="col" class="ps-6 py-3 text-start">
                 <label for="hs-at-with-checkboxes-main" class="flex items-center">
                   <input
@@ -79,7 +79,7 @@
                   <span class="text-sm text-gray-500">28 Dec, 12:12</span>
                 </td>
                 <td class="py-3">
-                  <a class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium">
+                  <a (click)="toggleViewDetail()" class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -411,3 +411,10 @@
    <div *ngIf="confirmDelete">
     <app-confirm-delete itemToDelete="Application(s)"></app-confirm-delete>
    </div>
+
+
+   <p-dialog header="" [(visible)]="viewDetails" [modal]="true" [style]="{ width: '1000px' }">
+    
+    <app-applicants-profile></app-applicants-profile>
+
+  </p-dialog>

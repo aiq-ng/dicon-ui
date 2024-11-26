@@ -13,6 +13,7 @@ export class ApplicationsComponent {
   confirmDelete: boolean = false;
   loading: boolean = false;
   viewImages:boolean=false;
+  viewDetails:boolean=false;
   genders: any = ['Male', 'Female'];
   courses: any = ['Mathematics', 'Science', 'English', 'Social Studies', 'History', 'Geography'];
   batches: any = ['Batch 1', 'Batch 2', 'Batch 3', 'Batch 4', 'Batch 5'];
@@ -121,6 +122,10 @@ export class ApplicationsComponent {
 
   toggleConfirmDelete(){
     this.confirmDelete = !this.confirmDelete;
+  }
+
+  toggleViewDetail(){
+    this.viewDetails =!this.viewDetails;
   }
 
   
