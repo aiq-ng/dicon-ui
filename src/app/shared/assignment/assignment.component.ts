@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './assignment.component.scss'
 })
 export class AssignmentComponent {
+  viewDropOut:boolean = false;
 
+
+
+  toggleViewDropOut() {
+    this.viewDropOut =!this.viewDropOut;
+  }
 }
