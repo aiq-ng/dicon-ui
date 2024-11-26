@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './exams.component.scss'
 })
 export class ExamsComponent {
+  viewDropOut:boolean = false;
+
+
+
+  toggleViewDropOut() {
+    this.viewDropOut =!this.viewDropOut;
+  }
 
 }
