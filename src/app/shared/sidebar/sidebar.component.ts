@@ -10,16 +10,24 @@ import { Router } from '@angular/router';
 export class SidebarComponent {
   dropdown:boolean = false;
   user: any;
+  studentPortal:any;
+  staffPortal:any;
 
   constructor(private router: Router, private storage: StorageService){}
 
   ngOnInit(){
     this.user = this.storage.getJson('user');
+    this.studentPortal = '/app/student-profile/' + this.user.id
+    this.studentPortal = '/app/staff-profile/' + this.user.id
     console.log('layout check', this.user.email);
   }
 
   toggleDropdown(){
     this.dropdown =!this.dropdown;
+  }
+
+  route(page:string){
+    this.router.navigateByUrl(page)
   }
 
 }
