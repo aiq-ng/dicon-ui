@@ -16,6 +16,7 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { CourseContentDetailComponent } from './course-content/course-content-detail/course-content-detail.component';
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
+import { SupportComponent } from './support/support.component';
 
 
 
@@ -39,6 +40,8 @@ const routes: Routes = [
       {path: 'reports', component: ReportsComponent},
       {path: 'batches', component: BatchesComponent},
       {path: 'batches/:id', component: BatchDetailComponent},
+      {path: 'support', component: SupportComponent},
+
     ]
   }
 ];

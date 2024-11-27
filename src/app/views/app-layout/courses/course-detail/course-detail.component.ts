@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { StorageService } from '../../../../services/storage.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -81,10 +82,13 @@ export class CourseDetailComponent {
 
   tableHeader = ['Name', 'Programe', 'phone_number', 'Enrolement date']
 
-  constructor(private router:Router) {}
+  user: any;
+
+  constructor(private router: Router, private storage: StorageService){}
 
   ngOnInit(){
-   
+    this.user = this.storage.getJson('user');
+    console.log('layout check', this.user.email);
   }
 
   toggleTab(menu:string){
