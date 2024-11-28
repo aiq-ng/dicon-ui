@@ -59,13 +59,24 @@
       <form [formGroup]="uploadForm" (ngSubmit)="save()">
         <div class="p-4 overflow-y-auto">
     
-          <div>
-            <div class="section-title font-bold ">Upload Course Content</div>
+          <div class="section-title font-bold ">Upload Course Content</div>
+          <div class="py-4 mt-4 border-b">
     
-     
-    
+            <div>
+              <label class="block text-gray-600 text-sm font-medium">
+                Course
+                <span class="text-red-500">*</span>
+              </label>
+              <select formControlName="vendor" [ngClass]="{'border-red-400': isSubmitted && f.vendor.errors}" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
+                <option value="">Select course</option>
+                 <ng-container *ngFor="let course of courses">
+                   <option value={{course.id}} >{{course.course_title}}</option>
+                 </ng-container>
+              </select>
+            </div>
+          
           <!-- Upload Media section -->
-          <div class="py-4 mt-4 border-b pb-8">
+          <div class="py-4 mt border-b pb-8">
             <div class="section-title font-bold">Media  <span class="text-sm">(Upload Video)</span></div>
     
             <div class="mt-4 flex gap-4">
