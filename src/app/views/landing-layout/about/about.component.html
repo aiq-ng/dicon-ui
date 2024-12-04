@@ -1,0 +1,179 @@
+<app-header></app-header>
+
+<main>
+
+
+  <div class="hero" ></div>
+
+  <!-- Evolution of the collage section -->
+  <section class="about-area about-p pt-120 pb-120 p-relative fix" style="background: #eff7ff;">
+    <div class="animations-02"><img src="/assets/web/img/bg/css.png" alt="About"></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+
+
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+
+                <div class="h-full flex items-center justify-center ">
+                  <div class="s-about-img p-relative wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                      <img src="/assets/uploads/about-us/DIC200_1723031419.png" alt="img">
+                  </div>
+              </div>
+
+              <div class="s-about-img p-relative wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                <img src="/assets/web/img/bg/css.png" alt="img">
+            </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="about-content s-about-content pl-15 wow fadeInRight animated" data-animation="fadeInRight" data-delay=".4s">
+                    <div class="about-title second-title pb-25">
+                        <!-- <h5><i class="fal fa-graduation-cap"></i> </h5> -->
+                        <h2>Evolution of the collage</h2>
+                    </div>
+                    <p class="mt-2 text-base leading-relaxed tracking-wide text-gray-800">
+                      AVM MS Usman Centre for Strategic Studies (CSS) is a multi-disciplinary academic and
+                      research centre designed to initiate programmes in strategic studies and undertake security
+                      related research. The CSS anchors the Advanced Defence Intelligence Officers' Course (ADIOC)
+                      which is designed to broaden officers' knowledge in determination of intelligence in policy
+                      and conflict situations. <br><br>Also  the Center anchors the Intelligence Analysis Officers'
+                      Course (IAOC) aimed at raising the quality of analytic tradecraft in the Agency and the
+                      intelligence community,   It facilitates training programmes with external academic and
+                      security organizations through collaboration with relevant institutions. Furthermore, the
+                      CSS writes strategic and poilcy papers for the College and the Agency as directed.
+                    </p>
+
+                    <!--<div class="about-content2">-->
+                    <!--    <div class="row">-->
+                    <!--        <div class="col-md-12">-->
+                    <!--            <ul class="green2">-->
+                    <!--                <li>-->
+                    <!--                    <div class="abcontent">-->
+                    <!--                        <div class="text">-->
+                    <!--                            <h3>Title</h3>-->
+                    <!--                            <p>Descr</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </li>-->
+                    <!--                <li>-->
+                    <!--                    <div class="abcontent">-->
+                    <!--                        <div class="text">-->
+                    <!--                            <h3>Title</h3>-->
+                    <!--                            <p>Desc</p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </li>-->
+                    <!--            </ul>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+  <!-- Evolution of the collage section end -->
+
+
+  <!-- Departments section -->
+  <section class="about-area about-p  p-relative fix" style="background: #eff7ff;">
+    <div class="animations-02"><img src="/assets/web/img/bg/css.png" alt="About"></div>
+    <div class="container ">
+      <div class="about-title second-title pb-25">
+        <!-- <h5><i class="fal fa-graduation-cap"></i> </h5> -->
+        <h2>Our Departments</h2>
+    </div>
+       <div class="grid grid-cols-4 gap-4 w-full p-2">
+        <ng-container *ngFor="let department of departments">
+          <div class="dept-card flex flex-col gap-2">
+            <div class="img">
+              <img src="" class="bg-gray-200 h-[120px] rounded-sm w-full" alt="">
+            </div>
+            <div class="content">
+              <div class="title font-medium text-xl text-gray-800">department.name</div>
+              <p class="text-gray-500 truncate-8">department.snippet</p>
+            </div>
+           </div>
+         </ng-container>
+       </div>
+    </div>
+</section>
+  <!-- Departments section end -->
+
+
+  <!-- about-area -->
+  <section class="about-area about-p pt-120 pb-120 p-relative fix" style="background: #eff7ff;">
+      <div class="animations-02"><img src="/assets/web/img/bg/css.png" alt="About"></div>
+      <div class="container">
+          <div class="row justify-content-center align-items-center">
+
+
+
+              <div class="col-lg-6 col-md-12 col-sm-12">
+
+                  <div class="h-full flex items-center justify-center ">
+                    <div class="s-about-img p-relative wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                        <img src="/assets/uploads/about-us/DIC200_1723031419.png" alt="img">
+                    </div>
+                </div>
+
+                <div class="s-about-img p-relative wow fadeInLeft animated" data-animation="fadeInLeft" data-delay=".4s">
+                  <img src="/assets/web/img/bg/css.png" alt="img">
+              </div>
+              </div>
+
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                  <div class="about-content s-about-content pl-15 wow fadeInRight animated" data-animation="fadeInRight" data-delay=".4s">
+                      <div class="about-title second-title pb-25">
+                          <h5><i class="fal fa-graduation-cap"></i> About AVM MS Usman CSS</h5>
+                          <h2>Centre for Strategic Studies</h2>
+                      </div>
+                      <p class="mt-4 text-base leading-relaxed tracking-wide text-gray-800">
+                        AVM MS Usman Centre for Strategic Studies (CSS) is a multi-disciplinary academic and
+                        research centre designed to initiate programmes in strategic studies and undertake security
+                        related research. The CSS anchors the Advanced Defence Intelligence Officers' Course (ADIOC)
+                        which is designed to broaden officers' knowledge in determination of intelligence in policy
+                        and conflict situations. <br><br>Also  the Center anchors the Intelligence Analysis Officers'
+                        Course (IAOC) aimed at raising the quality of analytic tradecraft in the Agency and the
+                        intelligence community,   It facilitates training programmes with external academic and
+                        security organizations through collaboration with relevant institutions. Furthermore, the
+                        CSS writes strategic and poilcy papers for the College and the Agency as directed.
+                      </p>
+
+                      <!--<div class="about-content2">-->
+                      <!--    <div class="row">-->
+                      <!--        <div class="col-md-12">-->
+                      <!--            <ul class="green2">-->
+                      <!--                <li>-->
+                      <!--                    <div class="abcontent">-->
+                      <!--                        <div class="text">-->
+                      <!--                            <h3>Title</h3>-->
+                      <!--                            <p>Descr</p>-->
+                      <!--                        </div>-->
+                      <!--                    </div>-->
+                      <!--                </li>-->
+                      <!--                <li>-->
+                      <!--                    <div class="abcontent">-->
+                      <!--                        <div class="text">-->
+                      <!--                            <h3>Title</h3>-->
+                      <!--                            <p>Desc</p>-->
+                      <!--                        </div>-->
+                      <!--                    </div>-->
+                      <!--                </li>-->
+                      <!--            </ul>-->
+                      <!--        </div>-->
+                      <!--    </div>-->
+                      <!--</div>-->
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+  <!-- about-area-end -->
+
+</main>
+
+<app-footer></app-footer>

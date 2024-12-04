@@ -45,6 +45,12 @@ export class HeaderComponent {
         "icon": "assets/icons/achive.png",
         "route": "/app/inventory-tracker"
 
+      },
+      {
+        "name": "About us",
+        "icon": "assets/icons/achive.png",
+        "route": "/about"
+
       }
     ]
 

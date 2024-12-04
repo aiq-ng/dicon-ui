@@ -7,6 +7,7 @@ import { DicGalleryComponent } from './dic-gallery/dic-gallery.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { LayoutComponent } from './layout.component';
 import { PgApplicationComponent } from './pg-application/pg-application.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'gallery', component: DicGalleryComponent},
     {path: 'news', component: NewsPageComponent},
     {path: 'pg-application', component: PgApplicationComponent},
+    {path: 'about', component: AboutComponent},
   ]}
 ];
 

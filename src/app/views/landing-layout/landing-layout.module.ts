@@ -10,6 +10,7 @@ import { DicGalleryComponent } from './dic-gallery/dic-gallery.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { LayoutComponent } from './layout.component';
 import { PgApplicationComponent } from './pg-application/pg-application.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PgApplicationComponent } from './pg-application/pg-application.componen
     DicGalleryComponent,
     NewsPageComponent,
     LayoutComponent,
-    PgApplicationComponent
+    PgApplicationComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
