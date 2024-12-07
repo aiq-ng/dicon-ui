@@ -25,6 +25,7 @@ import { GeneralInfoComponent } from './student-profile/general-info/general-inf
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 import { StaffGeneralInfoComponent } from './staff-profile/staff-general-info/staff-general-info.component';
 import { SupportComponent } from './support/support.component';
+import { ProgramsComponent } from './programs/programs.component';
 
 
 
@@ -49,6 +50,7 @@ import { SupportComponent } from './support/support.component';
     StaffProfileComponent,
     StaffGeneralInfoComponent,
     SupportComponent,
+    ProgramsComponent,
 
   ],
   imports: [

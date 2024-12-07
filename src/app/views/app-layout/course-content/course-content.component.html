@@ -3,24 +3,24 @@
   <p-toast/>
 
 <div class="videos">
-    
- 
+
+
 
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-start mt-8">
-        <div routerLink="/app/courses/1" class=" rounded-md border" *ngFor="let row of courses">
+        <div class=" rounded-md border" *ngFor="let row of courses">
            <!-- start card -->
-  <div routerLink="/app/app/courses/1" class=" w-full flex flex-col bg-white border shadow-sm rounded-xl ">
+  <div (click)="route('app/course-content-detail/' + row.id )" class=" w-full flex flex-col bg-white border shadow-sm rounded-xl ">
     <div class="p-4 md:p-5">
       <div class="flex items-center gap-x-2">
         <h6 class=" uppercase tracking-wide text-gray-500 ">
-            {{row.course_title}}
+            {{row.name}}
         </h6>
       </div>
 
       <div class=" flex items-center justify-between gap-x-2">
         <p class="font-medium text-gray-500 ">
-          Total No. of courses 3
+          Total No. of videos {{row.total_videos}}
         </p>
         <div class="flex gap-2 items-center cursor-pointer">
             <span class='text-seccolor'>view</span>
@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-</div> 
+</div>
 <!-- end card -->
         </div>
       </div>
@@ -45,23 +45,23 @@
    </div>
 
 
-   
+
 <div class="card flex justify-content-center h-">
   <!-- <p-button (onClick)="showAddStudentForm()" label="Show" /> -->
-  <p-dialog 
-      header="Upload Video" 
-      [modal]="true" 
-      [(visible)]="addVideo" 
-      [style]="{ width: '50rem' }" 
-      [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+  <p-dialog
+      header="Upload Video"
+      [modal]="true"
+      [(visible)]="addVideo"
+      [style]="{ width: '50rem' }"
+      [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
       [maximizable]="true">
-          
+
       <form [formGroup]="uploadForm" (ngSubmit)="save()">
         <div class="p-4 overflow-y-auto">
-    
+
           <div class="section-title font-bold ">Upload Course Content</div>
           <div class="py-4 mt-4 border-b">
-    
+
             <div>
               <label class="block text-gray-600 text-sm font-medium">
                 Course
@@ -69,46 +69,46 @@
               </label>
               <select formControlName="vendor" [ngClass]="{'border-red-400': isSubmitted && f.vendor.errors}" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
                 <option value="">Select course</option>
-                 <ng-container *ngFor="let course of courses">
+                 <ng-container *ngFor="let course of programes">
                    <option value={{course.id}} >{{course.course_title}}</option>
                  </ng-container>
               </select>
             </div>
-          
+
           <!-- Upload Media section -->
           <div class="py-4 mt border-b pb-8">
             <div class="section-title font-bold">Media  <span class="text-sm">(Upload Video)</span></div>
-    
+
             <div class="mt-4 flex gap-4">
               <div [ngClass]="{'border-red-400': isSubmitted && f.image.errors}" class="p-6 w-[150px] border border-dashed ">
                 <img *ngIf="!imageSrc" src="assets/images/image.png" alt="">
                 <img *ngIf="imageSrc" src={{imageSrc}} class="h-[60px]" alt="">
               </div>
-    
+
               <label  for="productImage" class="p-4 w-[120px] border border-dashed flex items-center justify-center">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                   </svg>
                 </span>
-                
+
               </label>
             </div>
-    
+
             <input formControlName="image" id="productImage" type="file"  (change)="onFileSelected($event)" class="hidden">
-    
+
           </div>
-    
+
 
             </div>
-    
-    
-    
-    
+
+
+
+
         </div>
-    
+
         <div class=" flex w-full justify-between items-center gap-x-2 py-3 px-4 border-t">
-    
+
           <div>
             <span class="text-gray-500 text-sm">Advance settings</span>
           </div>

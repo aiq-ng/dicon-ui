@@ -33,7 +33,7 @@
           <div class="col-sm-12">
               <div class="card px-8">
                 <div class="">
-                  <form id="" class=""  method="post" enctype="multipart/form-data" >
+                  <form [formGroup]="applicationForm" (ngSubmit)="save()" >
                       <!-- <input type="hidden" name="_token" value="JjdTj7but7Au6GvK1kkJMVCcse3gu8bAjYq9GJ4Z"> -->
 
                       <div class="flex gap-2 bg-white shadow-md  h-[64px]">
@@ -73,7 +73,7 @@
                           <fieldset class="row scheduler-border">
                           <div class="form-group col-md-6">
                               <label for="first_name">First Name <span>*</span></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" value="" required>
+                              <input formControlName="first_name" type="text" class="form-control" name="first_name" id="first_name" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter First Name
@@ -82,7 +82,7 @@
 
                           <div class="form-group col-md-6">
                               <label for="last_name">Last Name <span>*</span></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" value="" required>
+                              <input formControlName="last_name" type="text" class="form-control" name="last_name" id="last_name" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Last Name
@@ -95,7 +95,7 @@
 
                           <div class="form-group col-md-6">
                               <label for="phone">Phone <span>*</span></label>
-                              <input type="text" class="form-control" name="phone" id="phone" value="" required>
+                              <input formControlName="phone" type="text" class="form-control" name="phone" id="phone" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Phone
@@ -104,7 +104,7 @@
 
                           <div class="form-group col-md-6">
                               <label for="email">Email <span>*</span></label>
-                              <input type="email" class="form-control" name="email" id="email" value="" required>
+                              <input formControlName="email" type="email" class="form-control" name="email" id="email" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Email
@@ -113,11 +113,10 @@
 
                           <div class="form-group col-md-6">
                               <label for="gender">Gender <span>*</span></label>
-                              <select class="form-control" name="gender" id="gender" required>
+                              <select formControlName="gender" class="form-control" name="gender" id="gender" required>
                                   <option value="">Select</option>
-                                  <option value="1" >Male</option>
-                                  <option value="2" >Female</option>
-                                  <option value="3" >Other</option>
+                                  <option value="male" >Male</option>
+                                  <option value="feamale" >Female</option>
                               </select>
 
                               <div class="invalid-feedback">
@@ -127,7 +126,7 @@
 
                           <div class="form-group col-md-6">
                               <label for="dob">Date Of Birth <span>*</span></label>
-                              <input type="date" class="form-control date" name="dob" id="dob" value="" required>
+                              <input formControlName="dob" type="date" class="form-control date" name="dob" id="dob" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Date Of Birth
@@ -142,7 +141,7 @@
 
 
 
-                                                      </fieldset>
+                          </fieldset>
                           </div>
                           </div>
 
@@ -151,19 +150,12 @@
                           <legend>Academic Information</legend>
                           <div class="form-group col-md-6">
                           <label for="program">Program <span>*</span></label>
-                              <select class="form-control program" name="program" id="program" required>
+                              <select formControlName="programe_id" class="form-control program" name="program" id="program" required>
                                 <option value="">Select</option>
-                                                                    <option value="1" >Cartography</option>
-                                                                    <option value="5" >Conflict, Peace and Strategic Studies</option>
-                                                                    <option value="9" >Criminal Psychology and Forensic Studies</option>
-                                                                    <option value="8" >Criminology, Conflict and Change</option>
-                                                                    <option value="3" >Geographic Information System</option>
-                                                                    <option value="6" >Human Security and Counter-Terrorism</option>
-                                                                    <option value="4" >International Relations and Diplomacy</option>
-                                                                    <option value="2" >Remote Sensing</option>
-                                                                    <option value="7" >Soft Protocol and Diplomacy</option>
-                                                                    <option value="10" >Strategic Intelligence and Security Management</option>
-                                                                </select>
+                                 <ng-container *ngFor="let program of programes">
+                                  <option value={{program.id}}>{{program.name}}</option>
+                                 </ng-container>
+                              </select>
 
                             <div class="invalid-feedback">
                               Please Enter Program
@@ -182,7 +174,7 @@
                           <fieldset class="row scheduler-border">
                                                       <div class="form-group col-md-6">
                               <label for="photo">Photo: <span>Best Resolution Height- 300 PX, Width- 300 PX</span> <span>*</span></label>
-                              <input type="file" class="form-control" name="photo" id="photo" value="" required>
+                              <input (change)="onPhotoSelected($event)" type="file" class="form-control" name="photo" id="photo" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Photo
@@ -191,7 +183,7 @@
 
                           <div class="form-group col-md-6">
                               <label for="document">Upload Document: <span>Application Form</span> <span>*</span></label>
-                              <input type="file" class="form-control" name="document" id="document" value="" required>
+                              <input (change)="onApplyFormSelected($event)" type="file" class="form-control" name="document" id="document" value="" required>
 
                               <div class="invalid-feedback">
                                 Please Enter Document
@@ -205,6 +197,11 @@
                           <!-- Form End--->
                       </content>
                       </ng-container>
+
+
+                      <div class="w-full flex justify-end items-center">
+                        <button class="px-4 py-2 w-full max-w-[150px] bg-seccolor text-white rounded-md">Save</button>
+                      </div>
                   </form>
                   </div>
 

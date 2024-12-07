@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpServiceService } from '../../../services/http-service.service';
 
 @Component({
   selector: 'app-batches',
@@ -15,8 +16,9 @@ export class BatchesComponent {
   loading:boolean = false;
   createBatchForm:any;
   confirmDelete:boolean = false;
+  batches:any = [];
 
-  constructor(private router: Router, private fb: FormBuilder){}
+  constructor(private router: Router, private api: HttpServiceService, private fb: FormBuilder){}
 
 
   ngOnInit(){
@@ -48,6 +50,17 @@ export class BatchesComponent {
 
   toggleConfirmDelete(){
     this.confirmDelete =!this.confirmDelete;
+  }
+
+  getBatch(){
+    this.api.get('batches').subscribe(
+      res=>{
+        this.batches = res;
+        console.log('batches', this.batches);
+      }, err=>{
+        console.log(err);
+      }
+    )
   }
 
   createBatch(){}

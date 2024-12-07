@@ -34,7 +34,7 @@
             <span class="text-sm text-gray-800 font-semibold">12:30PM </span>
           </p>
       </div>
-  
+
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500 font-semibold min-w-12">
             Passing Percentage:
@@ -51,13 +51,22 @@
 
       <div class="h-4"></div>
 
-      <div (click)="toggleViewDropOut()" class="w-full flex justify-center">
+      <div (click)="toggleViewAssignmentDetail(viewer)" class="w-full flex justify-center">
         <button class="bg-seccolor text-white flex justify-center w-full py-2 rounded-md">View Details</button>
       </div>
+
 
 </div>
 
 
-<p-sidebar [(visible)]="viewDropOut" position="right" styleClass="hidden-scrollbar" [style]="{'width':'50%'}">
-  <app-assignment-detail></app-assignment-detail>
+
+
+
+<p-sidebar [(visible)]="viewStaffAssignment" position="right" styleClass="hidden-scrollbar" [style]="{'width':'50%'}">
+  <app-assignment-detail [viewer]="viewer"></app-assignment-detail>
+</p-sidebar>
+
+
+<p-sidebar [(visible)]="viewStudentAssignment" position="right" styleClass="hidden-scrollbar" [style]="{'width':'50%'}">
+  <app-assignment-detail [viewer]="viewer"></app-assignment-detail>
 </p-sidebar>

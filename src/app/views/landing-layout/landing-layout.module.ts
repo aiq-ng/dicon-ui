@@ -11,6 +11,7 @@ import { NewsPageComponent } from './news-page/news-page.component';
 import { LayoutComponent } from './layout.component';
 import { PgApplicationComponent } from './pg-application/pg-application.component';
 import { AboutComponent } from './about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AboutComponent } from './about/about.component';
     CommonModule,
     LandingLayoutRoutingModule,
     SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class LandingLayoutModule { }

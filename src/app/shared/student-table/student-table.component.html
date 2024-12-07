@@ -1,9 +1,7 @@
 <!-- Table Section -->
-<div class="w-full px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="w-full py-10">
     <!-- tables section -->
-    <div class="w-full flex flex-col basis-[65%] h-[70vh] bg-white">
-    <div class="-m-1.5 overflow-x-auto">
-    <div class="p-1.5 min-w-full inline-block align-middle">
+
         <div class="table-section border border-gray-200 rounded-xl shadow-sm overflow-x-auto">
 
             <!-- Header -->
@@ -12,7 +10,7 @@
               <h2 class="text-xl font-semibold text-gray-800 ">
                 {{tableTitle}}
               </h2>
-             
+
             </div>
 
             <!-- <div>
@@ -47,7 +45,7 @@
                 </th>
                 <ng-container *ngFor="let header of tableHeader">
                   <th
-                    
+
                     scope="col"
                     class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start whitespace-nowrap"
                   >
@@ -61,7 +59,7 @@
                 <th scope="col" class="ps-6 py-3 text-start"></th>
               </tr>
             </thead>
-  
+
             <tbody class="divide-y divide-gray-200">
               <ng-container *ngFor="let student of students">
                 <tr routerLink="/app/student-profile/1">
@@ -84,7 +82,7 @@
                       />
                       <div class="grow ">
                         <span class="block text-sm font-semibold text-gray-800">
-                          {{ student.first_name }} {{ student.last_name }}
+                          {{ student.name }}
                         </span>
                       </div>
                     </div>
@@ -96,7 +94,7 @@
                     <span class="text-xs text-gray-500">{{ student.phone_number }}</span>
                   </td>
                   <td class="py-3">
-                    <span class="text-sm text-gray-500">28 Dec, 12:12</span>
+                    <span class="text-sm text-gray-500">{{student.enrollment_date}}</span>
                   </td>
                   <td class="py-3">
                     <a class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium">
@@ -150,9 +148,7 @@
         </div>
         <!-- End Footer -->
         </div>
-    </div>
-    </div>
-</div>
+
 <!-- End Card -->
 </div>
 <!-- End Table Section -->

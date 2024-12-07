@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ApplicantsProfileComponent {
 
+  applicant:any = {
+    "fullName": "Bello Ahmed Sanusi",
+    "gender": "Male",
+    "course": "International Relations and Diplomacy",
+    "address": "Plot no. 116 Lane number 4 Abuja Crescent",
+    "nextOfKin": "Bello Yahya",
+    "email": "student@gmail.com",
+    "stateOfOrigin": "Jigawa",
+    "phoneNumber": "0814412345",
+    "localGovernmentArea": "Dutse"
+  }
+
 }

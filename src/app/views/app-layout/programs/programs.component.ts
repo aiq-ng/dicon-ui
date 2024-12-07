@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
 import { HttpServiceService } from '../../../services/http-service.service';
+import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-course-content',
-  templateUrl: './course-content.component.html',
-  styleUrl: './course-content.component.scss',
+  selector: 'app-programs',
+  templateUrl: './programs.component.html',
+  styleUrl: './programs.component.scss',
   providers: [MessageService]  // Import MessageService to use it in the component
 })
-export class CourseContentComponent {
-
+export class ProgramsComponent {
   programes:any = []
-  courses:any
   confirmDelete:boolean = false;
   addVideo:boolean = false
   files: any;
@@ -21,12 +19,12 @@ export class CourseContentComponent {
   isSubmitted: any;
   uploadForm:any;
   loading: boolean = false;
-  programeId:any;
+  departmentId:any;
 
   constructor(private fb: FormBuilder,
-            private api: HttpServiceService,
-            private messageService:MessageService,
-            private router: Router) {}
+              private api: HttpServiceService,
+              private messageService:MessageService,
+              private router:Router){}
 
   ngOnInit(){
 
@@ -49,29 +47,29 @@ export class CourseContentComponent {
       unit: ['', Validators.required],
     });
 
-    this.getCourses(this.getParamsId())
+    this.getProgrames(this.getParamsId())
+  }
+
+  route(page:any){
+    this.router.navigate([page])
   }
 
   getParamsId(){
     const url = window.location.href;
     console.log('url', url);
     const segments = url.split('/');
-    this.programeId = segments[segments.length - 1];
+    this.departmentId = segments[segments.length - 1];
 
-    return this.programeId;
-  }
-
-  route(page:string){
-    this.router.navigate([page]);
+    return this.departmentId;
   }
 
 
-  getCourses(programId:any){
+  getProgrames(departmentId:any){
     this.getParamsId()
-    this.api.get('courses/?program_id=' + programId).subscribe(
+    this.api.get('programs/' + departmentId).subscribe(
       res=>{
-        this.courses = res
-        console.log(this.courses)
+        this.programes = res
+        console.log(this.programes)
       }, err=>{
         console.log(err);
       }

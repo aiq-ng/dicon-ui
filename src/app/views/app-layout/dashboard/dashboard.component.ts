@@ -14,81 +14,17 @@ export class DashboardComponent {
     options: any=null;
     metrics: any=null;
     TopSellingProduct: any=null;
-    warehouseDetail: any=null;
+    recentApplications: any=null;
     pageLoading:boolean=false;
     calender:boolean=false;
     chartData:any[]=[]
-    products = [
-      {
-        "name": "SPRING ROLLS (CHICKEN)",
-        "amountSold": 120,
-      },
-      {
-        "name": "FISH KEBAB",
-        "amountSold": 120,
-      },
-      {
-        "name": "Buns",
-        "amountSold": 120,
-      },
-      {
-        "name": "MEAT PIE (MINI)",
-        "amountSold": 120,
-      },
-    ]
+
 
     constructor(private api:HttpServiceService, private messageService:MessageService){}
 
     ngOnInit() {
-      const documentStyle = getComputedStyle(document.documentElement);
-      const textColor = documentStyle.getPropertyValue('--text-color');
-      const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
-      const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
-
-      this.data = {
-          labels: ['BATCH', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-          datasets: [
-
-              {
-                  label: 'Cash Flow',
-                  data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-                  fill: false,
-                  borderColor: documentStyle.getPropertyValue('--orange-500'),
-                  tension: 0.4,
-                  backgroundColor: 'rgba(255,167,38,0.2)'
-              }
-          ]
-      };
-
-      this.options = {
-        maintainAspectRatio: false,
-        aspectRatio: 0.8,
-        plugins: {
-            legend: {
-                labels: {
-                    color: textColor
-                }
-            }
-        },
-        scales: {
-            x: {
-                ticks: {
-                    color: textColorSecondary
-                },
-                grid: {
-                  display: false,
-                }
-            },
-            y: {
-                ticks: {
-                    color: textColorSecondary
-                },
-                grid: {
-                  display: false,
-                }
-            }
-        }
-    };
+      this.getMetrics()
+      this.getRecentStudent()
     }
 
 
@@ -104,7 +40,7 @@ export class DashboardComponent {
     }
 
     getMetrics(){
-      this.api.get('dashboard/metrics').subscribe(
+      this.api.get('dashboard/').subscribe(
         res=>{
           this.metrics = res;
           console.log(this.metrics)
@@ -115,21 +51,17 @@ export class DashboardComponent {
       )
     }
 
-    getWarehouseDetail(){
-      this.api.get('dashboard/warehouses/details').subscribe(
+    getRecentStudent(){
+      this.api.get('applications/?page=1&page_size=3&status').subscribe(
         res=>{
-          this.warehouseDetail = res;
-          console.log(this.warehouseDetail)
-          this.chartData = [this.warehouseDetail?.data.cold_room, this.warehouseDetail?.data.kitchen]
-
-          console.log('chartData', this.chartData)
+          this.recentApplications = res;
+          console.log('recent student',this.recentApplications)
         },
         err=>{
           this.showError('Error fetching metrics');
         }
       )
 
-      return this.chartData
     }
 
     toggleCalender(){

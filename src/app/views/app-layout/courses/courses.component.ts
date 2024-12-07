@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpServiceService } from '../../../services/http-service.service';
 
 @Component({
   selector: 'app-courses',
@@ -14,8 +15,9 @@ export class CoursesComponent {
   loading:boolean = false;
   confirmDelete:boolean = false;
   createCourseForm:any;
+  programes:any;
 
-  constructor(private router: Router, private fb: FormBuilder){}
+  constructor(private router: Router, private api: HttpServiceService, private fb: FormBuilder){}
 
 
   ngOnInit(){
@@ -36,6 +38,32 @@ export class CoursesComponent {
       quantity: ['', [Validators.required, Validators.min(1)]],
       unit: ['', Validators.required],
     });
+
+    this.getDepatartments();
+    this.getProgrames();
+  }
+
+  getDepatartments(){
+    this.api.get('departments/').subscribe(
+      res=>{
+        this.departments = res
+        console.log(this.departments)
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+
+  getProgrames(){
+    this.api.get('programs/').subscribe(
+      res=>{
+        this.programes = res
+        console.log(this.departments)
+      }, err=>{
+        console.log(err);
+      }
+    )
   }
 
   toggleAddCourse(){
@@ -52,7 +80,14 @@ export class CoursesComponent {
   }
 
   createCourse(){
-    this.toggleAddCourse();
+    // this.toggleAddCourse();
+    this.api.post('', this.createCourseForm.value).subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
   }
 
 

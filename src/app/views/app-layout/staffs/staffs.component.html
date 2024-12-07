@@ -25,7 +25,7 @@
               </th>
               <ng-container *ngFor="let header of tableHeader">
                 <th
-                  
+
                   scope="col"
                   class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start whitespace-nowrap"
                 >
@@ -143,24 +143,24 @@
 
 <div class="card flex justify-content-center">
     <p-button (onClick)="toggleAddStaff()" label="Show" />
-    <p-dialog 
-        header="Add Staff" 
-        [modal]="true" 
-        [(visible)]="addStaff" 
-        [style]="{ width: '50rem' }" 
-        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+    <p-dialog
+        header="Add Staff"
+        [modal]="true"
+        [(visible)]="addStaff"
+        [style]="{ width: '50rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
         [maximizable]="true">
-        <form [formGroup]="createProductForm" (ngSubmit)="save()">
+        <form [formGroup]="createStaffForm" (ngSubmit)="save()">
             <div class="p-4 overflow-y-auto">
-        
+
               <div>
                 <div class="section-title font-bold ">Personal information</div>
-        
+
                 <div>
                   <!-- Basic information -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 border-b py-2 pb-8">
-        
-        
+
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       First Name
@@ -168,7 +168,7 @@
                     </label>
                     <input formControlName="productName" type="text" [ngClass]="{'border-red-400': isSubmitted && f.productName.errors}" class="block w-full border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="First Name">
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Last Name
@@ -176,7 +176,7 @@
                     </label>
                     <input formControlName="productName" type="text" [ngClass]="{'border-red-400': isSubmitted && f.productName.errors}" class="block w-full border px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Last Name">
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Gender
@@ -189,8 +189,8 @@
                       </ng-container>
                     </select>
                   </div>
-        
-        
+
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Email Address
@@ -198,7 +198,7 @@
                     <p class="text-red-700 mt-2 text-sm" *ngIf="isSubmitted && f.code.errors " >field required </p>
                     <input formControlName="code" [ngClass]="{'border-red-400': isSubmitted && f.code.errors}" type="text" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter Email">
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Mothers Name
@@ -206,14 +206,14 @@
                     </label>
                     <input  formControlName="sku" [ngClass]="{'border-red-400': isSubmitted && f.sku.errors}" formControlName="sku" type="text" class="block border w-full px-3 py-2 bg-gray-100  focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter Mothers' Name">
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Phone Number
                     </label>
                     <input [ngClass]="{'border-red-400': isSubmitted && f.barcode.errors}" formControlName="barcode" type="text" class="block border w-full px-3 py-2 bg-gray-100 bg-gray-200focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter Phone Number">
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Marital Status
@@ -226,7 +226,7 @@
                       </ng-container>
                     </select>
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Religion
@@ -239,42 +239,42 @@
                       </ng-container>
                     </select>
                   </div>
-        
-        
+
+
                 </div>
               </div>
-        
+
               <!-- Upload Media section -->
               <div class="py-4 mt-4 border-b pb-8">
                 <div class="section-title font-bold">Media  <span class="text-sm">(Upload picture)</span></div>
-        
+
                 <div class="mt-4 flex gap-4">
                   <div [ngClass]="{'border-red-400': isSubmitted && f.image.errors}" class="p-6 w-[150px] border border-dashed ">
                     <img *ngIf="!imageSrc" src="assets/images/image.png" alt="">
                     <img *ngIf="imageSrc" src={{imageSrc}} class="h-[60px]" alt="">
                   </div>
-        
+
                   <label  for="productImage" class="p-4 w-[120px] border border-dashed flex items-center justify-center">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                       </svg>
                     </span>
-                    
+
                   </label>
                 </div>
-        
+
                 <input formControlName="image" id="productImage" type="file"  (change)="onFileSelected($event)" class="hidden">
-        
+
               </div>
-        
+
               <!-- Contact Information section -->
               <div class="py-4 mt-4">
                 <div class="section-title font-bold">Contact Information</div>
-        
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 border-b py-2 pb-8">
-        
-        
+
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       State of Origin
@@ -287,8 +287,8 @@
                        </ng-container>
                     </select>
                   </div>
-        
-        
+
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       LGA
@@ -301,9 +301,9 @@
                        </ng-container>
                     </select>
                   </div>
-        
-                  
-        
+
+
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Home Address
@@ -311,7 +311,7 @@
                     </label>
                     <textarea formControlName="sku" [ngClass]="{'border-red-400': isSubmitted && f.sku.errors}" formControlName="sku" type="text" class="block border w-full px-3 py-2 bg-gray-100  focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter home address" id=""></textarea>
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Contact Address
@@ -319,7 +319,7 @@
                     </label>
                     <textarea formControlName="sku" [ngClass]="{'border-red-400': isSubmitted && f.sku.errors}" formControlName="sku" type="text" class="block border w-full px-3 py-2 bg-gray-100  focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter contact address" id=""></textarea>
                   </div>
-        
+
                   <div>
                     <label class="block text-gray-600 text-sm font-medium">
                       Home Town
@@ -327,19 +327,19 @@
                     </label>
                     <input  formControlName="sku" [ngClass]="{'border-red-400': isSubmitted && f.sku.errors}" formControlName="sku" type="text" class="block border w-full px-3 py-2 bg-gray-100  focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter home town">
                   </div>
-        
-        
+
+
                   <div class="flex gap-4">
-        
+
                     <!-- <div class="">
                       <label class="block text-gray-600 text-sm font-medium">
                         Profit
                         <span class="text-red-500">*</span>
                       </label>
-        
+
                         <input formControlName="profit" [ngClass]="{'border-red-400': isSubmitted && f.profit.errors}" type="text" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter Profit">
                     </div> -->
-        
+
                     <!-- <div>
                       <label class="block text-gray-600 text-sm font-medium">
                         Margin
@@ -347,19 +347,19 @@
                       </label>
                       <input formControlName="margin" [ngClass]="{'border-red-400': isSubmitted && f.margin.errors}" type="text" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm" placeholder="Enter Margin">
                     </div> -->
-        
+
                   </div>
-        
+
                 </div>
-        
+
               </div>
-        
+
               </div>
-        
+
             </div>
-        
+
             <div class=" flex w-full justify-between items-center gap-x-2 py-3 px-4 border-t">
-        
+
               <div>
                 <span class="text-gray-500 text-sm">Advance settings</span>
               </div>
@@ -370,7 +370,7 @@
           </form>
     </p-dialog>
   </div>
-  
+
 
 <!-- confirm Delete -->
 <div *ngIf="confirmDelete">

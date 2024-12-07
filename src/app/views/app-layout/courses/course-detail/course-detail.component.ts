@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { StorageService } from '../../../../services/storage.service';
+import { HttpServiceService } from '../../../../services/http-service.service';
 
 @Component({
   selector: 'app-course-detail',
@@ -78,17 +79,38 @@ export class CourseDetailComponent {
       "course_end": "20 May 2028"
     }
   ]
-  
+
 
   tableHeader = ['Name', 'Programe', 'phone_number', 'Enrolement date']
 
   user: any;
 
-  constructor(private router: Router, private storage: StorageService){}
+  constructor(private router: Router, private api: HttpServiceService, private storage: StorageService){}
 
   ngOnInit(){
     this.user = this.storage.getJson('user');
     console.log('layout check', this.user.email);
+  }
+
+  getCourseDetail(){
+    this.api.get('').subscribe(
+      res=>{
+        console.log(res);
+      },
+      err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  getStudentEnroled(){
+    this.api.get('').subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
   }
 
   toggleTab(menu:string){

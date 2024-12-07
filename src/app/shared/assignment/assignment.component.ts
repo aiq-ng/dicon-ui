@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-assignment',
@@ -6,11 +7,28 @@ import { Component } from '@angular/core';
   styleUrl: './assignment.component.scss'
 })
 export class AssignmentComponent {
-  viewDropOut:boolean = false;
+  viewStaffAssignment:boolean = false;
+  viewStudentAssignment:boolean = false;
+  viewer!:string;
+
+  constructor(private storage: StorageService){}
+
+  ngOnInit(){
+    let data = this.storage.getJson('user')
+    this.viewer = data.account_type
+  }
 
 
 
-  toggleViewDropOut() {
-    this.viewDropOut =!this.viewDropOut;
+  toggleViewAssignmentDetail(viewer:string) {
+    console.log('viewer', viewer)
+    if(viewer=='staff'){
+      this.viewStaffAssignment =!this.viewStaffAssignment;
+      console.log(this.viewStaffAssignment)
+    }else if(viewer=='student'){
+      this.viewStudentAssignment = !this.viewStudentAssignment;
+      console.log(this.viewStaffAssignment)
+
+    }
   }
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpServiceService } from '../../../services/http-service.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-support',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrl: './support.component.scss'
 })
 export class SupportComponent {
+  createSupportForm:any;
+
+  constructor(private api:HttpServiceService, private fb: FormBuilder){}
+
+  ngOnInit(){
+
+  }
+
+  createSupport(){
+    this.api.post('', this.createSupportForm).subscribe(
+      res=>{
+        console.log(res)
+      }, err=>{
+        console.log(err)
+      }
+    )
+  }
 
 }

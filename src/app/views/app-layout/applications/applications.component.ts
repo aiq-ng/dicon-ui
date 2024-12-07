@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpServiceService } from '../../../services/http-service.service';
 
 @Component({
   selector: 'app-applications',
@@ -84,11 +85,11 @@ export class ApplicationsComponent {
       "course_end": "20 May 2028"
     }
   ]
-  
+
 
   tableHeader = ['Name', 'Programe', 'phone_number', 'Enrolement date']
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private api: HttpServiceService) { }
 
   ngOnInit(){
     this.createApplicationForm = this.fb.group({
@@ -110,6 +111,48 @@ export class ApplicationsComponent {
     });
   }
 
+  getApplication(){
+    this.api.get('').subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  approveApplication(){
+    this.api.patch('').subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  rejectApplication(){
+    this.api.patch('').subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  getApplicationDetail(){
+    this.api.get('').subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  get(){}
+
   get f() {
     return this.createApplicationForm.controls;
   }
@@ -130,6 +173,6 @@ export class ApplicationsComponent {
     this.viewDetails =!this.viewDetails;
   }
 
-  
+
 
 }

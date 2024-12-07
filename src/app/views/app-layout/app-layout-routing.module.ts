@@ -17,6 +17,7 @@ import { CourseContentDetailComponent } from './course-content/course-content-de
 import { StudentProfileComponent } from './student-profile/student-profile.component';
 import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 import { SupportComponent } from './support/support.component';
+import { ProgramsComponent } from './programs/programs.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path: 'courses', component: CoursesComponent},
       {path: 'courses/:id', component: CourseDetailComponent},
       {path: 'course-content/:id', component: CourseContentComponent},
+      {path: 'programes/:id', component: ProgramsComponent},
       {path: 'course-content-detail/:id', component: CourseContentDetailComponent},
       {path: 'applications', component: ApplicationsComponent},
       {path: 'applications/:id', component: ApplicationDetailComponent},

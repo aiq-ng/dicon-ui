@@ -11,7 +11,7 @@ import { MessageService } from 'primeng/api';
 })
 export class StaffsComponent {
   addStaff:boolean = false;
-  createProductForm:any;
+  createStaffForm:any;
   isSubmitted: boolean = false;
   confirmDelete:boolean = false;
   files:any;
@@ -90,7 +90,7 @@ export class StaffsComponent {
       "course_end": "20 May 2028"
     }
   ]
-  
+
 
   tableHeader = ['Name', 'Programe', 'phone_number', 'Enrolement date']
 
@@ -102,76 +102,48 @@ export class StaffsComponent {
 
 
   ngOnInit(){
-    this.createProductForm = this.fb.group({
+    this.createStaffForm = this.fb.group({
       // Basic information
       productName: ['', Validators.required],
       warehouse: ['', Validators.required],
-      vendor: ['', Validators.required],
-      code: [''],
-      sku: ['', Validators.required],
-      image: ['', Validators.required],
-      barcode: [''],
 
-      // Sales information
-      price: ['', [Validators.required, Validators.min(0)]],
-
-      // Inventory
-      quantity: ['', [Validators.required, Validators.min(1)]],
-      unit: ['', Validators.required],
     });
 
 
   }
 
+  getStaff(){
+    this.api.get('').subscribe(
+      res=>{
+        console.log(res);
+      },
+      err=>{
+        console.log(err);
+      }
+    )
+  }
+
 
   get f() {
-    return this.createProductForm.controls;
+    return this.createStaffForm.controls;
   }
 
   save() {
     this.isSubmitted = true;
 
-    console.log(this.createProductForm.value);
-
-    let formData:any = new FormData();
-
     this.showSuccess('staff added successfully')
     this.toggleAddStaff();
 
-    // Append each file in the files array to FormData
-    // this.files.forEach((file: any) => {
-    //   formData.append(`media[]`, file, file.name);  // Append each file with the key media[]
-    // });
+    this.api.post('', this.createStaffForm).subscribe(
+      res=>{
+        console.log(res);
+      }, err=>{
+        console.log(err);
+      }
+    )
 
-    // Append other form data
-    // formData.append('name', this.createProductForm.get('productName')?.value);
-    // formData.append('location', this.createProductForm.get('warehouse')?.value);
-    // formData.append('vendor', this.createProductForm.get('vendor')?.value);
-    // formData.append('code', this.createProductForm.get('code')?.value);
-    // formData.append('sku', this.createProductForm.get('sku')?.value);
-    // formData.append('barcode', this.createProductForm.get('barcode')?.value);
-    // formData.append('price', this.createProductForm.get('price')?.value);
-    // formData.append('unit', this.createProductForm.get('unit')?.value);
-    // formData.append('quantity', this.createProductForm.get('quantity')?.value);
 
-    // if (this.createProductForm.invalid) {
-    //   console.log("form invalid");
-    //   return;
-    // }
-
-    // this.api.post('products', formData).subscribe(
-    //   res => {
-    //     console.log(res);
-    //     this.showSuccess('Product created successfully');
-    //     this.createProductForm.reset();
-    //   },
-    //   err => {
-    //     console.log(err);
-    //     this.showError('Failed to create product, please try again');
-    //   }
-    // );
   }
-
 
   onFileSelected(event: any): void {
     console.log('selection function hit');

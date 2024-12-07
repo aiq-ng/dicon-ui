@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class HttpServiceService {
 
-  baseUrl: string = environment.baseUrl
+  baseUrl: string = 'https://dic.0ps.tech/api/'
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   private getHttpOptions() {

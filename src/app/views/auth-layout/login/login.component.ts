@@ -57,7 +57,7 @@ export class LoginComponent {
     }
 
     let validateUser = this.validateUser(this.loginForm.get('email').value, this.loginForm.get('password').value);
-    console.log() 
+    console.log()
     console.log('validate user', validateUser, this.users);
     if(validateUser){
       this.showSuccess('login successfull!')
@@ -77,13 +77,18 @@ export class LoginComponent {
       this.loading = false;
     }
 
-    // this.auth.login(this.loginForm.value).subscribe(
+    // const formData = new FormData();
+    // formData.set('username', this.loginForm.get('email')?.value);
+    // formData.set('password', this.loginForm.get('password')?.value);
+
+    // this.auth.login(formData).subscribe(
     //   (res) => {
     //     console.log(res);
     //     this.loading = false;
     //     this.response = res;
-    //     this.storage.savedata('jwt_token', this.response.data.token)
+    //     this.storage.savedata('access_token', this.response.token)
     //     this.showSuccess('login successfull!')
+    //     console.log('login successfull!')
     //     this.router.navigate(['/app/dashboard']);
 
     //   },

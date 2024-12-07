@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseUrl: 'https://starters.hordun.software/'
+  baseUrl: 'https://dic.0ps.tech/api/'
 };
 
 
