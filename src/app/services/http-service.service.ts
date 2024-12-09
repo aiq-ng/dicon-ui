@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { AuthService } from './auth.service';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,12 @@ import { AuthService } from './auth.service';
 export class HttpServiceService {
 
   baseUrl: string = 'https://dic.0ps.tech/api/'
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private storage: StorageService) { }
 
   private getHttpOptions() {
     return {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.authService.getJwtToken()}`,
+        'Authorization': `Bearer ${this.storage.getdata('access_token')}`,
       })
     };
   }

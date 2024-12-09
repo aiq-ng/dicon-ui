@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AssignmentDetailComponent {
 @Input() viewer!:string;
+@Input() assignmentDetail:any;
 isDragging = false; // State for drag-and-drop
   file: File | null = null; // Selected file
 

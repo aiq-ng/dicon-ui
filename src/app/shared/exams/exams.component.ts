@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-exams',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ExamsComponent {
   viewDropOut:boolean = false;
+  @Input() exams:any;
+
 
 
 

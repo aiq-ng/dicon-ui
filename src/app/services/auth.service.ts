@@ -36,4 +36,20 @@ export class AuthService {
   }
 
 
+  getCurrentUsers(){
+    let currentUser
+    this.http.get('auth/user').subscribe(
+      res=>{
+        currentUser = res;
+        console.log('current user', currentUser)
+
+      }, err=>{
+        console.log(err)
+      }
+    )
+
+    return currentUser;
+  }
+
+
 }

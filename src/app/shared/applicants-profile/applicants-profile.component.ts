@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-applicants-profile',
@@ -6,17 +6,20 @@ import { Component } from '@angular/core';
   styleUrl: './applicants-profile.component.scss'
 })
 export class ApplicantsProfileComponent {
+  @Input() applicant:any;
+  @Output() approveApplication=new EventEmitter();
+  @Output() rejectApplication=new EventEmitter();
 
-  applicant:any = {
-    "fullName": "Bello Ahmed Sanusi",
-    "gender": "Male",
-    "course": "International Relations and Diplomacy",
-    "address": "Plot no. 116 Lane number 4 Abuja Crescent",
-    "nextOfKin": "Bello Yahya",
-    "email": "student@gmail.com",
-    "stateOfOrigin": "Jigawa",
-    "phoneNumber": "0814412345",
-    "localGovernmentArea": "Dutse"
+  ngOnInit(){
+    console.log('Application', this.applicant)
   }
+
+  onApprove(){
+    this.approveApplication.emit();
+  }
+  onReject(){
+    this.rejectApplication.emit();
+  }
+
 
 }

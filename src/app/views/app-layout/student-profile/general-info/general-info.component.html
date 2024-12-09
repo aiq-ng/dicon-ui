@@ -8,7 +8,7 @@
           </span>
           <span>
             <span class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
-            International Relations and Diplomacy
+              {{profileData[0].program}}
             </span>
 
           </span>
@@ -20,7 +20,7 @@
             </span>
             <span>
               <span class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
-              Bello Ahmed
+                {{profileData[0].full_name}}
               </span>
 
             </span>
@@ -32,7 +32,8 @@
             </span>
             <span>
               <span class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
-              Jigawa
+                {{profileData[0].next_of_kin}}
+
               </span>
 
             </span>
@@ -44,7 +45,7 @@
             </span>
             <span>
               <span class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
-              17 Jan 2023
+                {{profileData[0].program_start}}
               </span>
 
             </span>
@@ -56,7 +57,7 @@
             </span>
             <span>
               <span class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
-              17 Jan 2023
+                {{profileData[0].program_start}}
               </span>
 
             </span>
@@ -74,31 +75,31 @@
 
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500 font-semibold min-w-28">State: </span>
-        <span class="text-sm text-gray-800 ">Jigawa</span>
+        <span class="text-sm text-gray-800 ">{{profileData[0].state}}</span>
       </p>
 
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500  min-w-28">LGA: </span>
-        <span class="text-sm text-gray-800 ">Dutse</span>
+        <span class="text-sm text-gray-800 ">{{profileData[0].local_government}}</span>
       </p>
 
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500  min-w-28">Addres: </span>
-        <span class="text-sm text-gray-800 ">Plot no. 116 Lane number 4 Abuja Crescent</span>
+        <span class="text-sm text-gray-800 ">{{profileData[0].address}}</span>
       </p>
 
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500  min-w-28">
             phone number
         </span>
-        <span class="text-sm text-gray-800 ">0814412345</span>
+        <span class="text-sm text-gray-800 ">{{profileData[0].phone_number}}</span>
       </p>
 
       <p class="mt-1 flex gap-2 text-sm text-gray-600">
         <span class="text-sm text-gray-500  min-w-28">
             Email Address
         </span>
-        <span class="text-sm text-gray-800">student&#64;gmai.com</span>
+        <span class="text-sm text-gray-800">{{profileData[0].email}}</span>
       </p>
 
 

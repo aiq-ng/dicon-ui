@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StorageService } from '../../../services/storage.service';
 import { DataService } from '../../../services/data.service';
+import { HttpServiceService } from '../../../services/http-service.service';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,10 @@ export class LoginComponent {
   hidePassword: boolean = true;
   toastType!:string;
   response:any;
-  users: any;
+  user: any;
 
   constructor(private auth: AuthService,
+              private api: HttpServiceService,
               private fb: FormBuilder,
               private router: Router,
               private data: DataService,
@@ -30,7 +32,6 @@ export class LoginComponent {
               private storage: StorageService){}
 
   ngOnInit(){
-    this.users = this.data.getUsers()
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -40,66 +41,60 @@ export class LoginComponent {
   get f(){return this.loginForm.controls;}
 
 
-  validateUser(email: string, password: string): boolean {
-    return this.users.some(
-      (user:any) => user.email === email && user.password === password
-    );
-  }
-
-  login(){
-    this.isSubmitted = true;
-    this.loading = true;
-    console.log('login hit')
-
-    if(this.loginForm.invalid){
-      this.loading = false;
-      return;
-    }
-
-    let validateUser = this.validateUser(this.loginForm.get('email').value, this.loginForm.get('password').value);
-    console.log()
-    console.log('validate user', validateUser, this.users);
-    if(validateUser){
-      this.showSuccess('login successfull!')
-      let user = this.users.filter((user:any) => user.email === this.loginForm.get('email').value)
-      console.log('user', user, user.account_type);
-      this.storage.saveJson('user', user[0]);
-      if(user[0].account_type == 'student'){
-        this.router.navigate(['/app/student-profile/1']);
-      }else if(user[0].account_type == 'staff'){
-        this.router.navigate(['/app/staff-profile/1']);
-      }else if(user[0].account_type == 'admin'){
+  RouteUser(user:any){
+      console.log('user', user);
+      if(user[0].account_type.toLowerCase() == 'student'){
+        this.router.navigate(['/app/student-profile/' + user[0].id]);
+      }else if(user[0].account_type.toLowerCase() == 'Staff'){
+        this.router.navigate(['/app/staff-profile/' + user[0].id]);
+      }else if(user[0].account_type.toLowerCase() == 'admin'){
         this.router.navigate(['/app/dashboard']);
       }
       this.loading = false;
-    }else{
-      this.showError('Invalid email or password!')
-      this.loading = false;
-    }
 
-    // const formData = new FormData();
-    // formData.set('username', this.loginForm.get('email')?.value);
-    // formData.set('password', this.loginForm.get('password')?.value);
+  }
 
-    // this.auth.login(formData).subscribe(
-    //   (res) => {
-    //     console.log(res);
-    //     this.loading = false;
-    //     this.response = res;
-    //     this.storage.savedata('access_token', this.response.token)
-    //     this.showSuccess('login successfull!')
-    //     console.log('login successfull!')
-    //     this.router.navigate(['/app/dashboard']);
+  login(){
+    const formData = new FormData();
+    formData.set('username', this.loginForm.get('email')?.value);
+    formData.set('password', this.loginForm.get('password')?.value);
 
-    //   },
-    //   (err) => {
-    //     console.error(err);
-    //     this.showError('Invalid email or password!')
-    //     this.router.navigate(['/app/dashboard']);
-    //     this.loading = false;
-    //   }
-    // );
+    this.auth.login(formData).subscribe(
+      (res) => {
+        console.log(res);
+        this.loading = false;
+        this.response = res;
+        this.storage.savedata('access_token', this.response.access_token)
+        this.showSuccess('login successfull!')
+        console.log('login successfull!')
 
+        this.RouteUser(this.getCurrentUsers())
+
+      },
+      (err) => {
+        console.error(err);
+        this.showError('Invalid email or password!')
+        this.loading = false;
+      }
+    );
+
+  }
+
+  getCurrentUsers(){
+    let currentUser:any;
+    this.api.get('auth/user').subscribe(
+      res=>{
+        currentUser = res;
+        console.log('current user', currentUser)
+        this.storage.savedata('userAccountType', currentUser[0].account_type);
+        this.storage.savedata('userAccountId', currentUser[0].id);
+        this.RouteUser(currentUser);
+      }, err=>{
+        console.log(err)
+      }
+    )
+
+    return currentUser;
   }
 
   viewPassword(){

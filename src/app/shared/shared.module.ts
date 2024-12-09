@@ -23,6 +23,7 @@ import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.componen
 import { ExamsDetailComponent } from './exams-detail/exams-detail.component';
 import { AssignmentDetailComponent } from './assignment-detail/assignment-detail.component';
 import { ApplicantsProfileComponent } from './applicants-profile/applicants-profile.component';
+import { ApplyButtonComponent } from './apply-button/apply-button.component';
 
 
 
@@ -48,6 +49,7 @@ import { ApplicantsProfileComponent } from './applicants-profile/applicants-prof
     ExamsDetailComponent,
     AssignmentDetailComponent,
     ApplicantsProfileComponent,
+    ApplyButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -75,6 +77,8 @@ import { ApplicantsProfileComponent } from './applicants-profile/applicants-prof
     ExamsDetailComponent,
     AssignmentDetailComponent,
     ApplicantsProfileComponent,
+    ApplyButtonComponent,
+
 
   ]
 })

@@ -8,60 +8,52 @@
   </div>
 
   <div class="details mt-3 w-full max-w-[800px] grid grid-cols-2 gap-3">
-
     <div class="flex flex-col">
       <div class=" text-sm text-gray-500">Full Name</div>
-      <div class="value text-gray-800 font-normal">{{applicant.fullName}}</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].first_name}} {{applicant[0].last_name}}</div>
     </div>
 
     <div class="flex flex-col">
       <div class=" text-sm text-gray-500">Email</div>
-      <div class="value text-gray-800 font-normal">{{applicant.email}}</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].email}}</div>
     </div>
 
     <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">Course</div>
-      <div class="value text-gray-800 font-normal">{{applicant.course}}</div>
+      <div class=" text-sm text-gray-500">Date Of Birth</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].date_of_birth}}</div>
     </div>
 
     <div class="flex flex-col">
       <div class=" text-sm text-gray-500">Gender</div>
-      <div class="value text-gray-800 font-normal">{{applicant.gender}}</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].gender}}</div>
     </div>
 
 
     <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">Next of Kin</div>
-      <div class="value text-gray-800 font-normal">{{applicant.nextOfKin}}</div>
+      <div class=" text-sm text-gray-500">Program</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].degree}}</div>
     </div>
 
 
     <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">Email</div>
-      <div class="value text-gray-800 font-normal">{{applicant.nextOfKin}}</div>
+      <div class=" text-sm text-gray-500">Department</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].department}}</div>
     </div>
 
 
-    <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">State of Origin</div>
-      <div class="value text-gray-800 font-normal">{{applicant.nextOfKin}}</div>
-    </div>
 
 
     <div class="flex flex-col">
       <div class=" text-sm text-gray-500">Phone Number</div>
-      <div class="value text-gray-800 font-normal">{{applicant.phoneNumber}}</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].phone_number}}</div>
     </div>
 
 
-    <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">Local government Area</div>
-      <div class="value text-gray-800 font-normal">{{applicant.localGovernmentArea}}</div>
-    </div>
+
 
     <div class="flex flex-col">
-      <div class=" text-sm text-gray-500">Address</div>
-      <div class="value text-gray-800 font-normal">{{applicant.address}}</div>
+      <div class=" text-sm text-gray-500">Description</div>
+      <div class="value text-gray-800 font-normal">{{applicant[0].description}}</div>
     </div>
 
 
@@ -77,15 +69,15 @@
     </div>
 
    <div class="flex gap-4 mb-16">
-    <img class="w-32 h-40" src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-    <img src="/assets/document.png" class="w-32 h-40"  alt="document image">
+    <img class="w-32 h-40" src={{applicant[0].photo_url}} alt="">
+    <img src={{applicant[0].application_form_url}} class="w-32 h-40"  alt="document image">
    </div>
   </div>
 
 
   <div class="flex gap-4 items-center p-4 bg-white border justify-center fixed bottom-0 w-[950px]">
-    <button class="px-4 py-2 rounded-md border border-seccolor text-white bg-seccolor">Approve Application</button>
-    <button class="px-4 py-2 rounded-md border border-seccolor text-seccolor bg-white">Reject Application</button>
+    <button (click)="onApprove()" class="px-4 py-2 rounded-md border border-seccolor text-white bg-seccolor">Approve Application</button>
+    <button (click)="onReject()" class="px-4 py-2 rounded-md border border-seccolor text-seccolor bg-white">Reject Application</button>
   </div>
 
   </div>

@@ -27,18 +27,9 @@ export class BatchesComponent {
       productName: ['', Validators.required],
       warehouse: ['', Validators.required],
       vendor: ['', Validators.required],
-      code: [''],
-      sku: ['', Validators.required],
-      image: ['', Validators.required],
-      barcode: [''],
-
-      // Sales information
-      price: ['', [Validators.required, Validators.min(0)]],
-
-      // Inventory
-      quantity: ['', [Validators.required, Validators.min(1)]],
-      unit: ['', Validators.required],
     });
+
+    this.getBatch();
   }
   get f() {
     return this.createBatchForm.controls;
@@ -53,7 +44,7 @@ export class BatchesComponent {
   }
 
   getBatch(){
-    this.api.get('batches').subscribe(
+    this.api.get('batches/').subscribe(
       res=>{
         this.batches = res;
         console.log('batches', this.batches);

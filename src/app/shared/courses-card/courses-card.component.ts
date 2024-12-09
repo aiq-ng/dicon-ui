@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CoursesCardComponent {
   calender:boolean = false;
+  @Input() courses:any;
 
   constructor(private router:Router){}
   route(page:string){

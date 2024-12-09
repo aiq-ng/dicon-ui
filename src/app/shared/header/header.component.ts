@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent {
   dropDown:boolean = false;
   showMobileMenu:boolean = false;
   is_mobileMenu:boolean = false;
-
+  userAccountType:any;
     menu = [
       {
         "name": "Home Page",
@@ -54,9 +55,10 @@ export class HeaderComponent {
       }
     ]
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private storage: StorageService){}
 
   ngOnInit() {
+    this.userAccountType = this.storage.getdata('userAccountType');
   }
 
   route(page:string){

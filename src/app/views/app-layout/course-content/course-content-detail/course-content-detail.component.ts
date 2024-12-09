@@ -44,6 +44,10 @@ export class CourseContentDetailComponent {
     )
   }
 
+  openVideo(videoUrl:string) {
+    window.open(videoUrl, '_blank');
+  }
+
   openChapter(id:number){
     this.open = !this.open;
     this.currentId = id;

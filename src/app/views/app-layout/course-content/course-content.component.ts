@@ -33,20 +33,9 @@ export class CourseContentComponent {
 
     this.uploadForm = this.fb.group({
       // Basic information
-      productName: ['', Validators.required],
-      warehouse: ['', Validators.required],
-      vendor: ['', Validators.required],
-      code: [''],
-      sku: ['', Validators.required],
-      image: ['', Validators.required],
-      barcode: [''],
+      course_id: ['', Validators.required],
+      video_url: ['', Validators.required],
 
-      // Sales information
-      price: ['', [Validators.required, Validators.min(0)]],
-
-      // Inventory
-      quantity: ['', [Validators.required, Validators.min(1)]],
-      unit: ['', Validators.required],
     });
 
     this.getCourses(this.getParamsId())
@@ -109,15 +98,26 @@ export class CourseContentComponent {
     return this.uploadForm.controls;
   }
   save() {
+    this.loading = true
+    if(this.uploadForm.invalid){
+      this.showError('one or more fields are required')
+      this.loading = false;
+      return;
+    }
 
-    this.api.post('', this.uploadForm.value).subscribe(
+    console.log('upload for data', this.uploadForm.value);
+
+    this.api.post('courses/videos', this.uploadForm.value).subscribe(
       res=>{
         console.log(res);
+        this.showSuccess('Video uploaded successfully')
+        this.uploadForm.reset();
+        this.loading = false;
       }, err=>{
         console.log(err);
+        this.loading = false;
       }
     )
-    this.showSuccess('Video uploaded successfully')
       this.toggleAddVideo()
     }
 

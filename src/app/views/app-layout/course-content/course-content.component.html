@@ -52,7 +52,7 @@
       header="Upload Video"
       [modal]="true"
       [(visible)]="addVideo"
-      [style]="{ width: '50rem' }"
+      [style]="{ width: '30rem' }"
       [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
       [maximizable]="true">
 
@@ -60,23 +60,33 @@
         <div class="p-4 overflow-y-auto">
 
           <div class="section-title font-bold ">Upload Course Content</div>
-          <div class="py-4 mt-4 border-b">
+          <div class="py-4 mt-4 border-b flex flex-col gap-3">
 
             <div>
               <label class="block text-gray-600 text-sm font-medium">
                 Course
                 <span class="text-red-500">*</span>
               </label>
-              <select formControlName="vendor" [ngClass]="{'border-red-400': isSubmitted && f.vendor.errors}" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
+              <select formControlName="course_id" [ngClass]="{'border-red-400': isSubmitted && f.course_id.errors}" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
                 <option value="">Select course</option>
-                 <ng-container *ngFor="let course of programes">
-                   <option value={{course.id}} >{{course.course_title}}</option>
+                 <ng-container *ngFor="let course of courses">
+                   <option value={{course.id}} >{{course.name}}</option>
                  </ng-container>
               </select>
             </div>
 
+            <div>
+              <label class="block text-gray-600 text-sm font-medium">
+                Video Url
+                <span class="text-red-500">*</span>
+              </label>
+              <input formControlName="video_url" [ngClass]="{'border-red-400': isSubmitted && f.video_url.errors}" class="block border w-full px-3 py-2 bg-gray-100 focus:outline-none focus:ring-black-500 focus:border-black-500 sm:text-sm">
+            </div>
+
+
+
           <!-- Upload Media section -->
-          <div class="py-4 mt border-b pb-8">
+          <!-- <div class="py-4 mt border-b pb-8">
             <div class="section-title font-bold">Media  <span class="text-sm">(Upload Video)</span></div>
 
             <div class="mt-4 flex gap-4">
@@ -97,10 +107,11 @@
 
             <input formControlName="image" id="productImage" type="file"  (change)="onFileSelected($event)" class="hidden">
 
-          </div>
+          </div> -->
 
 
-            </div>
+
+        </div>
 
 
 
@@ -109,9 +120,6 @@
 
         <div class=" flex w-full justify-between items-center gap-x-2 py-3 px-4 border-t">
 
-          <div>
-            <span class="text-gray-500 text-sm">Advance settings</span>
-          </div>
           <button type="submit" >
             <p-button class="p-2 px-4 bg-primary text-white text-sm" [loading]="loading"  label="Save" ></p-button>
           </button>

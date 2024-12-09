@@ -5,18 +5,18 @@
         </div>
         <div class="detail">
             <h4 class="w-full max-w-[450px]">
-                Department of Geography and Environmental Sustainability M.Sc. and PhD
+                {{profileData[0].department}}
             </h4>
             <p>
                 <span class="text-base text-gray-800">HOD:</span>
-                <span class="text-sm text-gray-500"> AA Kasim</span>
+                <span class="text-sm text-gray-500"> {{profileData[0].head_of_department}}</span>
             </p>
             <p class="text-green-700">
-                <span class="text-sm text-gray-800">Created on:</span>
-                <span class="text-sm text-green-700"> 3 sept 2023</span>
+                <span class="text-sm text-gray-800">programe:</span>
+                <span class="text-sm text-green-700"> {{profileData[0].degree}}</span>
             </p>
     </div>
-    
+
 </div>
 
 <div class="mt-8 flex gap-8 border-b border-gray-200 cursor-pointer">
@@ -38,7 +38,7 @@
       <nav (click)="toggleTab('fees')" [ngClass]="{'border-seccolor': currentMenu=='fees'}" class="flex border-b-2 gap-4 text-base" aria-label="Tabs" role="tablist">
         Fees
       </nav>
-      
+
 
 
 </div>
@@ -47,23 +47,23 @@
 <div class="mt-6">
 
   <div *ngIf="currentMenu=='courses'">
-    <app-courses-card ></app-courses-card>
+    <app-courses-card [courses]="StudentCourses"></app-courses-card>
 
 </div>
 
 <div *ngIf="currentMenu=='general'">
-  
+
     <app-general-info (viewExams)="toggleTab('exams')"></app-general-info>
 </div>
 
 <div *ngIf="currentMenu=='exams'">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <app-exams></app-exams>
+  <div class="">
+    <app-exams [exams]="StudentExams"></app-exams>
   </div>
 </div>
 
 <div *ngIf="currentMenu=='assignment'">
-    <app-assignment></app-assignment>
+    <app-assignment [assignments]="StudentAssignment" viewer="student"></app-assignment>
 </div>
 
 <div *ngIf="currentMenu=='fees'">
