@@ -15,6 +15,7 @@ import { DialogModule } from 'primeng/dialog';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { OrderListModule } from 'primeng/orderlist';
 import { AccordionModule } from 'primeng/accordion';
+import { PanelModule } from 'primeng/panel';
 
 
 
@@ -33,6 +34,7 @@ const primeNG: any = [
   DialogModule,
   TabMenuModule,
   AccordionModule,
+  PanelModule
 ]
 
 

@@ -9,53 +9,30 @@ export class AboutComponent {
 
   departments:any = [
     {
-      "name": "Political science",
+      "name": "Department of Professional Studies (PS).",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
     {
-      "name": "Political science",
+      "name": "Department of Counter Intelligence (CI).",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
     {
-      "name": "Political science",
+      "name": "Department of Technical Studies (TS). ",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
     {
-      "name": "Political science",
+      "name": "Department of General Studies (GS).",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
     {
-      "name": "Political science",
+      "name": "Joint Military Attaché/Adviser Programme (JMAP). ",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
     {
-      "name": "Political science",
+      "name": "Department of Languages (Lang).",
       "snippet": "Department description that’s pretty much 2 sentences long"
     },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
-    {
-      "name": "Political science",
-      "snippet": "Department description that’s pretty much 2 sentences long"
-    },
+
   ]
 
 }

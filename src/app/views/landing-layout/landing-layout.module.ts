@@ -12,6 +12,7 @@ import { LayoutComponent } from './layout.component';
 import { PgApplicationComponent } from './pg-application/pg-application.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PrimengModule } from '../../primeng/primeng.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     LandingLayoutRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PrimengModule
   ]
 })
 export class LandingLayoutModule { }
