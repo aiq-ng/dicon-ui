@@ -61,7 +61,7 @@ export class PgApplicationComponent {
 
     if(this.applicationForm.invalid){
       console.log('Form is invalid')
-      this.showError('One or two fiels are required')
+      this.showError('One or more fields are required')
       return;
     }
 
