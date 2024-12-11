@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-exams-detail',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './exams-detail.component.scss'
 })
 export class ExamsDetailComponent {
+  @Input() examDetail:any;
 
 }

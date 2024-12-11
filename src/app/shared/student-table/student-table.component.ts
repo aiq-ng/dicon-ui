@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-table',
@@ -11,5 +12,15 @@ export class StudentTableComponent {
   @Input() students: any[] = [];
   @Input() tableHeader: any[] = [];
   @Output() selectedStudent: EventEmitter<any> = new EventEmitter();
+
+  constructor(private router:Router){}
+
+  ngOnInit(){
+
+  }
+
+  route(page:any){
+    this.router.navigate([page]);
+  }
 
 }

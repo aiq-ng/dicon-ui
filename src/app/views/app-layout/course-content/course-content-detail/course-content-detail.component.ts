@@ -13,6 +13,8 @@ export class CourseContentDetailComponent {
   open = false
   currentId=0
   courseId:any;
+  assignments:any
+  view:any = ''
 
   constructor(private location: Location, private router:Router, private api:HttpServiceService){}
 
@@ -20,7 +22,9 @@ export class CourseContentDetailComponent {
 
 
   ngOnInit(){
+    this.view = 'videos';
     this.getVideos(this.getParamsId());
+    this.getAssignments(this.getParamsId());
   }
 
   getParamsId(){
@@ -32,9 +36,9 @@ export class CourseContentDetailComponent {
     return this.courseId;
   }
 
-  getVideos(departmentId:any){
+  getVideos(courseId:any){
     this.getParamsId()
-    this.api.get('courses/' + departmentId + '/videos' ).subscribe(
+    this.api.get('courses/' + courseId + '/videos' ).subscribe(
       res=>{
         this.videos = res
         console.log(this.videos)
@@ -44,6 +48,21 @@ export class CourseContentDetailComponent {
     )
   }
 
+  getAssignments(courseId:any){
+    this.getParamsId()
+    this.api.get('assignments/?course_id=' + courseId).subscribe(
+      res=>{
+        this.assignments = res
+        console.log('assignments', this.assignments)
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+  toggleView(view:string){
+    this.view = view
+  }
   openVideo(videoUrl:string) {
     window.open(videoUrl, '_blank');
   }

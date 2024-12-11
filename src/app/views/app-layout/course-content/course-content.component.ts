@@ -14,14 +14,18 @@ export class CourseContentComponent {
 
   programes:any = []
   courses:any
+  assignments:any;
   confirmDelete:boolean = false;
   addVideo:boolean = false
   files: any;
   imageSrc: any;
   isSubmitted: any;
   uploadForm:any;
+  assignmentForm:any;
   loading: boolean = false;
   programeId:any;
+  createAssignment:boolean = false;
+
 
   constructor(private fb: FormBuilder,
             private api: HttpServiceService,
@@ -38,7 +42,18 @@ export class CourseContentComponent {
 
     });
 
+
+    this.assignmentForm = this.fb.group({
+      course_id: ['', Validators.required],
+      assignment_url: ['', Validators.required],
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      due_date: ['', Validators.required],
+      pass_mark: ['', Validators.required]
+    })
+
     this.getCourses(this.getParamsId())
+    this.getAssignments(this.getParamsId())
   }
 
   getParamsId(){
@@ -60,6 +75,19 @@ export class CourseContentComponent {
     this.api.get('courses/?program_id=' + programId).subscribe(
       res=>{
         this.courses = res
+        console.log(this.courses)
+      }, err=>{
+        console.log(err);
+      }
+    )
+  }
+
+
+  getAssignments(programId:any){
+    this.getParamsId()
+    this.api.get('assignments/?course_id=' + programId).subscribe(
+      res=>{
+        this.assignments = res
         console.log(this.courses)
       }, err=>{
         console.log(err);
@@ -94,6 +122,11 @@ export class CourseContentComponent {
 
   }
 
+  toggleCreateAssignment(){
+    this.createAssignment = !this.createAssignment;
+
+  }
+
   get f() {
     return this.uploadForm.controls;
   }
@@ -120,6 +153,32 @@ export class CourseContentComponent {
     )
       this.toggleAddVideo()
     }
+
+
+    saveAssignment() {
+      this.loading = true
+      if(this.assignmentForm.invalid){
+        this.showError('one or more fields are required')
+        this.loading = false;
+        return;
+      }
+
+      console.log('upload for data', this.assignmentForm.value);
+
+      this.api.post('assignments/', this.assignmentForm.value).subscribe(
+        res=>{
+          console.log(res);
+          this.showSuccess('Assignment uploaded successfully')
+          this.uploadForm.reset();
+          this.loading = false;
+        }, err=>{
+          console.log(err);
+          this.loading = false;
+        }
+      )
+        this.toggleCreateAssignment()
+
+      }
 
 
     deleteCourse(){

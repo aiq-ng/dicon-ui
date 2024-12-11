@@ -18,25 +18,28 @@ export class AssignmentComponent {
 
   ngOnInit(){
     let data = this.storage.getJson('user')
+
+    console.log('passed assignment', this.assignments)
   }
 
 
   getAssignmentById(id: any) {
+    console.log('id', id)
     return this.assignments.find((assignment:any) => assignment.assignment_id === id) || null;
   }
 
 
   toggleViewAssignmentDetail(viewer:string, id:any) {
-    console.log('viewer', viewer)
+    console.log('viewer', viewer, 'id', id, 'assignments', this.assignments)
     if(viewer=='staff'){
       this.viewStaffAssignment =!this.viewStaffAssignment;
       this.assignmentDetail = this.getAssignmentById(id)
-      console.log(this.viewStaffAssignment)
+      console.log(this.assignmentDetail)
     }else if(viewer=='student'){
       this.viewStudentAssignment = !this.viewStudentAssignment;
       this.assignmentDetail = this.getAssignmentById(id)
       console.log('students assignment detail', this.assignmentDetail)
-      console.log(this.viewStaffAssignment)
+      console.log(this.assignmentDetail)
 
     }
   }

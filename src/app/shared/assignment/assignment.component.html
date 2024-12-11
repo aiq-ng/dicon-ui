@@ -6,6 +6,7 @@
 
           <h5 class="font-semibold text-gray-800 ">
               {{assignment.department}}
+
             </h5>
 
             <div class="  max-w-[350px] my-3">
@@ -46,7 +47,7 @@
             <span class="text-sm text-gray-800 font-semibold">{{assignment.passing_percentage}}</span>
             </p>
 
-            <p class="mt-1 flex gap-2 text-sm text-gray-600">
+            <p *ngIf="viewer=='student' " class="mt-1 flex gap-2 text-sm text-gray-600">
               <span class="text-sm text-gray-500 font-semibold min-w-12">
                 Scored Percentage
               </span>
@@ -54,8 +55,7 @@
             </p>
 
             <div class="h-4"></div>
-
-            <div (click)="toggleViewAssignmentDetail(viewer, assignment.assingment_id)" class="w-full flex justify-center">
+            <div (click)="toggleViewAssignmentDetail(viewer, assignment.assignment_id)" class="w-full flex justify-center">
               <button class="bg-seccolor text-white flex justify-center w-full py-2 rounded-md">View Details</button>
             </div>
 
@@ -84,5 +84,5 @@
 
 
 <p-sidebar [(visible)]="viewStudentAssignment" position="right" styleClass="hidden-scrollbar" [style]="{'width':'50%'}">
-  <app-assignment-detail [viewer]="viewer"></app-assignment-detail>
+  <app-assignment-detail [viewer]="viewer" [assignmentDetail]="assignmentDetail"></app-assignment-detail>
 </p-sidebar>

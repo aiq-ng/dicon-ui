@@ -69,14 +69,20 @@
     </div>
 
    <div class="flex gap-4 mb-16">
-    <img class="w-32 h-40" src={{applicant[0].photo_url}} alt="">
-    <img src={{applicant[0].application_form_url}} class="w-32 h-40"  alt="document image">
+    <div>
+      <img class="w-32 h-40" src='https://neweralive.na/wp-content/uploads/2024/06/lloyd-sikeba.jpg' alt="">
+      <span>Applicants Photo</span>
+    </div>
+    <div>
+      <img src="/assets/file.png" class="w-32 h-40"  alt="document image">
+      <span>Application Form</span>
+    </div>
    </div>
   </div>
 
 
   <div class="flex gap-4 items-center p-4 bg-white border justify-center fixed bottom-0 w-[950px]">
-    <button (click)="onApprove()" class="px-4 py-2 rounded-md border border-seccolor text-white bg-seccolor">Approve Application</button>
+    <button (click)="onApprove(applicant[0].id)" class="px-4 py-2 rounded-md border border-seccolor text-white bg-seccolor">Approve Application</button>
     <button (click)="onReject()" class="px-4 py-2 rounded-md border border-seccolor text-seccolor bg-white">Reject Application</button>
   </div>
 

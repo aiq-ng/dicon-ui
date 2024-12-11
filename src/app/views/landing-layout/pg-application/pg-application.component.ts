@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpServiceService } from '../../../services/http-service.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-pg-application',
   templateUrl: './pg-application.component.html',
-  styleUrl: './pg-application.component.scss'
+  styleUrl: './pg-application.component.scss',
+  providers: [MessageService]  // Import MessageService to use it in the component
 })
 export class PgApplicationComponent {
   formStage:any;
@@ -16,7 +18,7 @@ export class PgApplicationComponent {
   photo: any;
   applyForm: any;
 
-  constructor(private fb: FormBuilder, private api: HttpServiceService){}
+  constructor(private fb: FormBuilder, private api: HttpServiceService, private messageService: MessageService){}
 
   ngOnInit(){
     this.formStage =1;
@@ -59,6 +61,7 @@ export class PgApplicationComponent {
 
     if(this.applicationForm.invalid){
       console.log('Form is invalid')
+      this.showError('One or two fiels are required')
       return;
     }
 
@@ -111,5 +114,16 @@ export class PgApplicationComponent {
       this.formStage = 1;
     }
   }
+
+
+  showSuccess(message: string) {
+    console.log('showSuccess')
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
+  }
+
+  showError(message: string) {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
+  }
+
 
 }

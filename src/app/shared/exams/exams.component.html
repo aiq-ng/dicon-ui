@@ -56,8 +56,10 @@
           <div class="h-4"></div>
 
           <div class="w-full flex justify-center">
-            <button (click)="toggleViewDropOut()" class="bg-seccolor text-white flex justify-center w-full py-2 rounded-md">View Details</button>
+            <button (click)="toggleViewDropOut(exam.exam_id)" class="bg-seccolor text-white flex justify-center w-full py-2 rounded-md">View Details</button>
           </div>
+
+
 
       </div>
 
@@ -72,5 +74,5 @@
 
 
 <p-sidebar [(visible)]="viewDropOut" position="right" styleClass="hidden-scrollbar" [style]="{'width':'50%'}">
-  <app-exams-detail></app-exams-detail>
+  <app-exams-detail [examDetail]="examDetail"></app-exams-detail>
 </p-sidebar>

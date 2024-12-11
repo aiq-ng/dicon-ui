@@ -16,7 +16,7 @@
                 <span class="text-sm text-green-700"> 3 sept 2023</span>
             </p>
     </div>
-    
+
 </div>
 
 <div class="mt-8 flex gap-8 border-b border-gray-200 cursor-pointer">
@@ -28,10 +28,10 @@
         Courses
       </nav>
 
-      <nav (click)="toggleTab('exams')" [ngClass]="{'border-seccolor': currentMenu=='exams'}" class="flex border-b-2 gap-4 text-base" aria-label="Tabs" role="tablist">
-        Exams
+      <nav (click)="toggleTab('assignment')" [ngClass]="{'border-seccolor': currentMenu=='exams'}" class="flex border-b-2 gap-4 text-base" aria-label="Tabs" role="tablist">
+        Assignments
       </nav>
-      
+
 
 
 </div>
@@ -47,13 +47,13 @@
                     International Relations and Diplomacy
                 </h6>
               </div>
-  
+
               <div class=" flex items-center justify-between gap-x-2">
                 <p class="font-medium text-gray-500 dark:text-neutral-200">
-                  Total No. of videos
+                  Total No.
                   <span class="text-pricolor text-base font-semibold">6</span>
                 </p>
-                
+
               </div>
 
               <div class="w-full flex justify-end">
@@ -68,7 +68,7 @@
               </div>
 
             </div>
-        </div> 
+        </div>
         <!-- end card -->
 
     </div>
@@ -81,9 +81,9 @@
 </div>
 </div>
 
-<div *ngIf="currentMenu=='exams'">
+<div *ngIf="currentMenu=='assignment'">
   <div class="mt-8">
-    <app-exams></app-exams>
+    <app-assignment [assignments]="assignments" viewer="staff"></app-assignment>
   </div>
 </div>
 

@@ -14,7 +14,7 @@
       <h2 class="text-xl font-semibold">Exam Result Details</h2>
       <p class="text-xs text-gray-500">
         Result Declared on
-        <span class="text-blue-600">12:30 AM | 22 September 2023</span>
+        <span class="text-blue-600">{{examDetail[0].result_date}}</span>
       </p>
     </div>
 
@@ -27,46 +27,44 @@
         </svg>
       </div>
       <div>
-        <h3 class="font-medium text-gray-900">Bello Ahmad</h3>
-        <p class="text-sm text-gray-500">Student ID: TIPSG5682</p>
+        <h3 class="font-medium text-gray-900">{{examDetail[0].student_name}}</h3>
+        <p class="text-sm text-gray-500">Student ID: {{examDetail[0].student_id}}</p>
         <a  class="text-blue-600 text-sm underline">View Profile</a>
       </div>
     </div>
 
     <!-- Exam Info -->
     <div class="mt-6">
-      <p class="text-lg font-semibold">International Relations and Diplomacy.</p>
+      <p class="text-lg font-semibold">{{examDetail[0].exam_title}}</p>
       <div class="flex items-center space-x-4 mt-3">
-        <p class="text-sm text-gray-500">Batch 3CO - JVY</p>
-        <p class="text-sm text-gray-500">|</p>
-        <p class="text-sm text-gray-500">12:40 PM</p>
-        <p class="text-sm text-gray-500">|</p>
-        <p class="text-sm text-gray-500">03 Jan 2023</p>
-        <span class="px-2 py-1 bg-green-100 text-green-600 text-sm rounded">Status: Pass</span>
+        <!-- <p class="text-sm text-gray-500">Batch 3CO - JVY</p> -->
+        <p class="text-sm text-gray-500">{{examDetail[0].result_date}}</p>
+
+        <span class="px-2 py-1 bg-green-100 text-green-600 text-sm rounded">Status: </span>
       </div>
     </div>
 
     <!-- Course Details -->
     <div class="mt-6 space-y-2">
       <p class="text-sm">
-        <span class="font-semibold text-sm">Course:</span> International Relations and Diplomacy
+        <span class="font-semibold text-sm">Course:</span> {{examDetail[0].course_name}}
       </p>
       <p class="text-sm">
-        <span class="font-semibold text-sm">Subject:</span> Criminology
+        <!-- <span class="font-semibold text-sm">Subject:</span> Criminology -->
       </p>
       <p class="text-sm">
-        <span class="font-semibold text-sm">Total Marks:</span> 50
+        <span class="font-semibold text-sm">Total Marks:</span> {{examDetail[0].passing_mark}}
       </p>
       <p class="text-sm">
-        <span class="font-semibold text-sm">Passing Percentage:</span> 50%
+        <span class="font-semibold text-sm">Passing Percentage:</span> {{examDetail[0].passing_percentage}}
       </p>
     </div>
 
     <!-- Question Paper -->
-    <div class="mt-6">
+    <!-- <div class="mt-6">
       <p class="font-medium">Question Paper</p>
       <a  class="text-blue-600 text-sm underline">International Relations and Diplomacy.pdf</a>
-    </div>
+    </div> -->
 
     <!-- Result -->
     <div class="mt-6">
@@ -77,10 +75,10 @@
           <a  class="text-blue-600 underline">International Relations and Diplomacy.pdf</a>
         </p>
         <p class="text-sm">
-          <span class="font-medium">Student's Score:</span> 32/50
+          <span class="font-medium">Student's Score:</span> {{examDetail[0].student_score}}
         </p>
         <p class="text-sm">
-          <span class="font-semibold text-sm">Student's Percentage:</span> 64%
+          <span class="font-semibold text-sm">Student's Percentage:</span> {{examDetail[0].student_percentage}}%
         </p>
       </div>
     </div>

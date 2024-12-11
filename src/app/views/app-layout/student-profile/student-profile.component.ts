@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { HttpServiceService } from '../../../services/http-service.service';
+import { StorageService } from '../../../services/storage.service';
 
 @Component({
   selector: 'app-student-profile',
@@ -16,9 +17,10 @@ export class StudentProfileComponent {
   StudentCourses:any;
   StudentExams:any;
   StudentAssignment:any;
+  uri:any;
 
 
-  constructor(private api:HttpServiceService, private router:Router){}
+  constructor(private api:HttpServiceService, private storage:StorageService, private router:Router){}
 
   ngOnInit(){
     this.getProfile();
@@ -28,8 +30,15 @@ export class StudentProfileComponent {
   }
 
   getProfile(){
-    let currentUser
-    this.api.get('students/profile').subscribe(
+    let uri:any;
+    let userAccountType = this.storage.getdata('userAccountType')
+    if(userAccountType?.toLowerCase() === 'student'){
+      uri='students/profile'
+    } else{
+      uri='students/profile?student_id=' + this.getParamsId()
+    }
+
+    this.api.get(uri).subscribe(
       res=>{
         this.profileData = res;
         console.log('profile data', this.profileData)
@@ -41,8 +50,15 @@ export class StudentProfileComponent {
   }
 
   getStudentCourses(){
-    let currentUser
-    this.api.get('students/courses').subscribe(
+    let uri:any;
+    let userAccountType = this.storage.getdata('userAccountType')
+    if(userAccountType?.toLowerCase() === 'student'){
+      uri='students/courses'
+    } else{
+      uri='students/courses?student_id=' + this.getParamsId()
+    }
+
+    this.api.get(uri).subscribe(
       res=>{
         this.StudentCourses = res;
         console.log('student courses', this.StudentCourses)
@@ -54,8 +70,16 @@ export class StudentProfileComponent {
   }
 
   getStudentExams(){
-    let currentUser
-    this.api.get('students/exams').subscribe(
+    let uri:any;
+    let userAccountType = this.storage.getdata('userAccountType')
+    if(userAccountType?.toLowerCase() === 'student'){
+      uri='students/exams'
+    } else{
+      uri='students/exams?student_id=' + this.getParamsId()
+    }
+
+
+    this.api.get(uri).subscribe(
       res=>{
         this.StudentExams = res;
         console.log('exams data', this.StudentExams)
@@ -67,11 +91,18 @@ export class StudentProfileComponent {
   }
 
   getStudentAssignment(){
-    let currentUser
-    this.api.get('students/assignments').subscribe(
+    let uri:any;
+    let userAccountType = this.storage.getdata('userAccountType')
+    if(userAccountType?.toLowerCase() === 'student'){
+      uri='students/assignments'
+    } else{
+      uri='students/assignments?student_id=' + this.getParamsId()
+    }
+
+    this.api.get(uri).subscribe(
       res=>{
         this.StudentAssignment = res;
-        console.log('exams data', this.StudentAssignment)
+        console.log('Student Exams data', this.StudentAssignment)
 
       }, err=>{
         console.log(err)

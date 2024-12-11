@@ -1,7 +1,10 @@
 
+
 <!-- Start Content-->
 <div class="main-body">
   <div class="page-wrapper">
+
+    <p-toast />
       <!-- [ Main Content ] start -->
       <div class="card">
           <div class="card-block">
@@ -153,7 +156,7 @@
                               <select formControlName="programe_id" class="form-control program" name="program" id="program" required>
                                 <option value="">Select</option>
                                  <ng-container *ngFor="let program of programes">
-                                  <option value={{program.id}}>{{program.name}}</option>
+                                  <option value={{program.id}}>{{program.program}}</option>
                                  </ng-container>
                               </select>
 

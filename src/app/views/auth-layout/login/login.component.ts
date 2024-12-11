@@ -45,7 +45,7 @@ export class LoginComponent {
       console.log('user', user);
       if(user[0].account_type.toLowerCase() == 'student'){
         this.router.navigate(['/app/student-profile/' + user[0].id]);
-      }else if(user[0].account_type.toLowerCase() == 'Staff'){
+      }else if(user[0].account_type.toLowerCase() == 'staff'){
         this.router.navigate(['/app/staff-profile/' + user[0].id]);
       }else if(user[0].account_type.toLowerCase() == 'admin'){
         this.router.navigate(['/app/dashboard']);

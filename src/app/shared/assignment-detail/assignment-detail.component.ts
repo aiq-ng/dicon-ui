@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { HttpServiceService } from '../../services/http-service.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-assignment-detail',
@@ -10,6 +12,20 @@ export class AssignmentDetailComponent {
 @Input() assignmentDetail:any;
 isDragging = false; // State for drag-and-drop
   file: File | null = null; // Selected file
+  assignmentForm:any;
+  loading:boolean = false;
+
+  constructor(private api:HttpServiceService, private fb:FormBuilder){}
+
+
+  ngOnInit(){
+    this.assignmentForm = this.fb.group({
+      link: ['', Validators.required],
+    })
+  }
+
+
+  save(){}
 
   // Handle drag over
   onDragOver(event: DragEvent): void {
